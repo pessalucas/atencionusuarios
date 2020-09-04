@@ -26,8 +26,8 @@ if ( have_posts() ) {
 				break;
 			}
 			the_post();
-			$news_id        = get_the_ID();
-			$news_has_image = 
+		/*	$news_id        = get_the_ID();
+			$news_has_image = */
 			?>
 			<div class="col-md-7 col-lg-4 pr-lg-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="450">
 				<article class="card custom-post-style-1 border-0">
@@ -53,5 +53,8 @@ if ( have_posts() ) {
 		}
 		?>
 		</div>
-	</div>
-}
+    </div>
+    <?php
+		}
+		?>
+

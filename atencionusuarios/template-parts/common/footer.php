@@ -99,7 +99,7 @@
 						<div class="row py-4 mt-2">
 							<div class="col-lg-6 text-center text-lg-left mb-3 mb-lg-0">
 								<a href="demo-it-services.html">
-									<img alt="Porto" width="115" height="30" src="img/demos/it-services/logo-light.png">
+									<img alt="Porto" width="115" height="30" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/logo.png">
 								</a>
 							</div>
 							<div class="col-lg-6 text-center text-lg-right">

@@ -43,23 +43,37 @@ if ( ! class_exists( 'Users_Login' ) ) {
 					}
 					*/
 
+			$user_login    = $_POST[ 'username' ];
+			$user_pass     = $_POST[ 'password' ];
 
+			echo $user_login;
+			echo $user_pass;
+			echo "llego";
 			if ( is_user_logged_in() ) {
 				$current_user = wp_get_current_user();
-				wp_send_json_success( "Usuario logueado correctamente" );
+				wp_send_json_success( "Usuario logueado correctamente." );
 				die();
 			}
 
-			$user_login    = $_POST[ '' ];
-			$user_pass     = $_POST[ '' ];
-			$user_remember = $_POST[ '' ];
+			if ( wp_login ( $user_login , $user_pass ) ){
+				wp_send_json_success( "Usuario logueado correctamente." );
+				die();
+			}else{
+				wp_send_json_error( "Usuario y password incorrectos" );
+				die();
+			}
+
+
+
+			//$user_remember = $_POST[ '' ];
+
 			/*
 			if ( si no tengo user login o passw ){
 				wp_send_json_error( "Hubo un errror al procesar lo solicitado" );
 				die();
 			}
 			*/
-
+			/*
 			$creds = array(
 				'user_login'    => $user_login,
 				'user_password' => $user_pass,
@@ -74,7 +88,7 @@ if ( ! class_exists( 'Users_Login' ) ) {
 				wp_send_json_success( "Usuario logueado correctamente." );
 			}
 
-			die();
+			die();*/
 		}
 		/**
 		 * Static accessor.
