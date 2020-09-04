@@ -6,7 +6,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="demo-it-services.html">
-											<img alt="Porto" width="100" height="100" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/logo.png">
+											<img alt="Porto" width="50" height="50" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/logo.png">
 										</a>
 									</div>
 								</div>

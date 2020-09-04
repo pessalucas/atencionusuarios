@@ -1,3 +1,4 @@
+
 <section class="section custom-section-full-width bg-color-transparent border-0 mt-1 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-4.png); background-repeat: no-repeat; background-position: top right;">
 	<div class="container container-lg mt-3">
 		<div class="row justify-content-center">
@@ -13,7 +14,7 @@
 		</div>
 		<div class="row mb-4">
 			<div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
-				<form class="contact-form" action="<?php echo get_stylesheet_directory_uri(); ?>/functions/insert-user.php" method="POST">
+				<form class="contact-form" method="POST">
 					<div class="contact-form-success alert alert-success d-none mt-4">
 						<strong>Te has registrado correctamente!</strong>
 					</div>
@@ -49,6 +50,7 @@
 					</div>
 					<div class="form-row">
 						<div class="form-group col mb-0">
+                        <?php do_action('register_form'); ?>
 							<button type="submit" class="btn btn-secondary btn-outline text-color-dark font-weight-semibold border-width-4 custom-link-effect-1 text-1 text-xl-3 d-inline-flex align-items-center px-4 py-3" data-loading-text="Loading...">Registrarse <i class="custom-arrow-icon ml-5"></i></button>
 						</div>
 					</div>
@@ -57,3 +59,7 @@
 		</div>
 	</div>
 </section>
+
+
+<!-- JS REGISTER -->
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/class-js/users-register.js"></script>
