@@ -28,7 +28,7 @@ if ( ! class_exists( 'Users_Login' ) ) {
 		 */
 		public function login_user() {
 
-			/*
+			
 			2) Intentar loguear al usuario
 				1) Si lo logra
 					{
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Users_Login' ) ) {
 						"status": "error",
 						"data": "Usuario o password incorecto"
 					}
-					*/
+			
 
 
 			if ( is_user_logged_in() ) {
@@ -53,12 +53,11 @@ if ( ! class_exists( 'Users_Login' ) ) {
 			$user_login    = $_POST[ '' ];
 			$user_pass     = $_POST[ '' ];
 			$user_remember = $_POST[ '' ];
-			/*
+
 			if ( si no tengo user login o passw ){
 				wp_send_json_error( "Hubo un errror al procesar lo solicitado" );
 				die();
 			}
-			*/
 
 			$creds = array(
 				'user_login'    => $user_login,
