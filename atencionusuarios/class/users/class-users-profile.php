@@ -101,39 +101,6 @@ if ( ! class_exists( 'Users_Profile' ) ) {
 		}
 
 		/**
-		 * Creamos un usuario nuevo
-		 *
-		 * @param $dates Trae toda la info del usuario para la creacion.
-		 */
-		public function create_profile( $user ) {
-
-		//Nombres invalidos
-		$invalid_usernames = array( 'admin', 'pito' );
-
-		//Do username validation
-		$this->$username = sanitize_user( $this->$username );
-		if ( !validate_username( $this->$username ) || in_array( $this->$username, $invalid_usernames ) ) {
-			return 'Usuario invalido.';
-		}
-		if ( username_exists( $this->$username ) ) {
-			return 'El usuario existe.';
-		}
-		//Validacion de mail
-		if ( !is_email( $this->$email ) ) {
-			return 'El mail es invalido.';
-		}
-		if (email_exists($this->$email)) {
-			return 'El mail esta en uso.';
-		}
-
-		//Terminada la validacion creo password y usuario
-		wp_insert_user( $user );
-		return 'El usuario se ha creado correctamente';
-		/*
-		Enviar contraseña por mail? No esta SMPT configurado no funcionaria.
-		wp_new_user_notification( $user_id, $user_pass );*/
-		}
-		/**
 		 * Static accessor.
 		 *
 		 * @return Users_Profile singleton.

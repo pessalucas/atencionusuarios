@@ -22,8 +22,8 @@ jQuery(document).ready(function($) {
             data: { 
                 'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
                 'username': $('form#login #username').val(), 
-                'password': $('form#login #password').val(), 
-            },
+                'password': $('form#login #password').val()/*, 
+            'security': $('form#login #security').val() */},
             success: function(data){
                 $('form#login p.status').text(data.message);
                 if (data.loggedin == true){
@@ -31,10 +31,10 @@ jQuery(document).ready(function($) {
                 }
             },
             fail: function(data){
-                alert(data);
+                $('form#login p.status').text(data.message);
             }
-            
-            
+        }).fail( function(data){
+            $('form#login p.status').text(data.message);
         });
         e.preventDefault();
     });

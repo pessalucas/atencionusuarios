@@ -2,11 +2,12 @@
 
 require_once 'class/users/class-users-profile.php';
 require_once 'class/users/class-users-login.php';
-//require_once 'class/users/class-users-logintest.php';
+//require_once 'class/users/class-users-logintest.php'; (FALLA)
 require_once 'class/users/class-users-register.php';
 
 
-//add this within functions.php
+
+//Incializacion de ajax
 function ajax_login_init(){
 
     wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery') ); 
@@ -15,7 +16,7 @@ function ajax_login_init(){
     wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'redirecturl' => home_url(),
-        'loadingmessage' => __('Sending user info, please wait...')
+        'loadingmessage' => __('Chequeando informacion, espere...')
     ));
 
     // Enable the user with no privileges to run ajax_login() in AJAX
@@ -27,7 +28,7 @@ if (!is_user_logged_in()) {
     add_action('init', 'ajax_login_init');
 }
 
-
+//Login por ajax
 function ajax_login(){
 
     // Nonce is checked, get the POST data and sign user on
@@ -41,7 +42,7 @@ function ajax_login(){
         wp_set_current_user($user_signon->ID);
         wp_set_auth_cookie($user_signon->ID);
 		echo json_encode(array('loggedin'=>true, 'message'=>__('Acceso correcto, redirigiendo.')));
-		/*$return= array(
+	/*	$return= array(
 			'message'=>__('Acceso correcto, redirigiendo.')
 		);
 		wp_send_json_success( $return);*/
@@ -51,6 +52,120 @@ function ajax_login(){
 
     die();
 }
+
+
+//Incializacion de ajax
+function ajax_register_init(){
+
+    wp_register_script('ajax-register-script', get_template_directory_uri() . '/resources/scripts/ajax-register-script.js', array('jquery') ); 
+    wp_enqueue_script('ajax-register-script');
+
+    wp_localize_script( 'ajax-register-script', 'ajax_register_object', array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'redirecturl' => home_url(),
+        'loadingmessage' => __('Cargando informacion, espere...')
+    ));
+
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_ajaxregister', 'ajax_register' );
+}
+
+// Execute the action only if the user isn't logged in
+if (!is_user_logged_in()) {
+    add_action('init', 'ajax_register_init');
+}
+
+//Login por ajax
+function ajax_register(){
+
+	$name=$_POST['name'];
+	$phone=$_POST['phone'];
+	$email=$_POST['email'];
+	$dni=$_POST['dni'];
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$name=$_POST['name'];
+	$address=$_POST['address'];
+
+	if ( wp_create_user($username, $password, $email) ) {
+	
+		// Loguearse posterior a registro.
+	$info = array();
+	$info['user_login'] = $username;
+	$info['user_password'] = $password;
+	$info['remember'] = true;
+	$user_signon = wp_signon( $info, false );
+
+		//Tomo id para cargar campos especiales
+	$user_id= get_current_user_id();
+
+		//Actualizo campos especiales (FALLA)
+	update_user_meta( $user_id, 'firstname', $name );
+	update_user_meta( $user_id, 'dni', $dni );
+	update_user_meta( $user_id, 'telefono', $phone );
+	update_user_meta( $user_id, 'direccion', $address );
+		
+	echo json_encode(array('registerin'=>true, 'message'=>__('Registro correcto, redirigiendo.')));
+	}else{
+		echo json_encode(array('registerin'=>false, 'message'=>__('Error de registro.')));
+		
+	}
+	die();
+}
+
+
+
+//Incializacion de ajax
+function ajax_update_init(){
+
+    wp_register_script('ajax-update-script', get_template_directory_uri() . '/resources/scripts/ajax-update-script.js', array('jquery') ); 
+    wp_enqueue_script('ajax-update-script');
+
+    wp_localize_script( 'ajax-update-script', 'ajax_update_object', array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'redirecturl' => home_url(),
+        'loadingmessage' => __('Cargando informacion, espere...')
+    ));
+
+    // Enable the user with no privileges to run ajax_login() in AJAX
+	add_action( 'wp_ajax_nopriv_ajaxupdate', 'ajax_update' );
+	add_action( 'wp_ajax_priv_ajaxupdate', 'ajax_update' );
+}
+
+    add_action('init', 'ajax_update_init');
+
+
+//Login por ajax
+function ajax_update(){
+
+	$name=$_POST['name'];
+	$phone=$_POST['phone'];
+	$email=$_POST['email'];
+	$dni=$_POST['dni'];
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$name=$_POST['name'];
+	$address=$_POST['address'];
+
+	if (false ) {
+	
+		//Tomo id para cargar campos especiales
+	$user_id= get_current_user_id();
+
+		//Actualizo campos especiales y no especiales (FALLA)
+	update_user_meta( $user_id, 'dni', $dni );
+	update_user_meta( $user_id, 'telefono', $phone );
+	update_user_meta( $user_id, 'direccion', $address );
+		
+	echo json_encode(array('updatein'=>true, 'message'=>__('Registro correcto, redirigiendo.')));
+	}else{
+		echo json_encode(array('updatein'=>false, 'message'=>__('Error de registro.')));
+		
+	}
+	die();
+}
+
+
 
 
 
