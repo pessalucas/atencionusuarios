@@ -17,7 +17,8 @@
 			) ); ?>
 
 
-    <?php get_template_part( 'template-parts/news/news' ); ?>
+    <?php //get_template_part( 'template-parts/news/main-news' ); ?>
+	<?php get_template_part( 'template-parts/news/categories/categories-news' ); ?>
 
 	
 	<?php get_template_part( 'template-parts/common/footer' ); ?>

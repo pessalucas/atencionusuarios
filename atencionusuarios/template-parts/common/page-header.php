@@ -2,11 +2,12 @@
 //Obtengo las variables enviadas.
 
 $title = ente_get_var( 'title', true );
-$tag1 = ente_get_var( 'tag1', true );
-$tag2 = ente_get_var( 'tag2', true );
-$tag3  = ente_get_var( 'tag3', true );
-$tag4  = ente_get_var( 'tag4', true );
-$tag5  = ente_get_var( 'tag5', true );
+$tag=array();
+$tag['1'] = ente_get_var( 'tag1', true );
+$tag['2'] = ente_get_var( 'tag2', true );
+$tag['3']  = ente_get_var( 'tag3', true );
+$tag['4']  = ente_get_var( 'tag4', true );
+$tag['5']  = ente_get_var( 'tag5', true );
 
 ?>
 
@@ -15,12 +16,15 @@ $tag5  = ente_get_var( 'tag5', true );
                     <div class="container container-lg py-5">
                         <div class="row">
                             <div class="col-md-8 order-2 order-md-1 align-self-center p-static">
-                                <h1 class="font-weight-extra-bold text-14 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200"><?php echo $tittle;  ?></h1>
+                                <h1 class="font-weight-extra-bold text-14 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200"><?php echo $title;  ?></h1>
                             </div>
                             <div class="col-md-4 order-1 order-md-2 align-self-center">
                                 <ul class="breadcrumb d-block text-md-right breadcrumb-light appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
-                                    <li><a href="#"><?php echo $tag1;  ?> </a></li>
-                                    <li class="active"><?php echo $tag2;  ?> </li>
+                                <?php foreach($tag as $tagaux):  
+                                        if($tagaux!=1){ 
+                                    ?>
+                                    <li><a href="/<?php echo $tagaux; ?>/"><?php echo $tagaux; ?></a></li>
+                                <?php } endforeach;  ?>
                                 </ul>
                             </div>
                         </div>

@@ -46,18 +46,20 @@ if ( ! class_exists( 'Users_Profile' ) ) {
 							'value' => $user_dni,
 						)
 					);
+					$user_telefono = get_user_meta( $user->ID, 'telefono', true );
 					$this->render_textfield(
 						array(
 							'slug'  => 'telefono',
 							'name'  => 'Teléfono',
-							'value' => '',
+							'value' => $user_telefono,
 						)
 					);
+					$user_direccion = get_user_meta( $user->ID, 'direccion', true );
 					$this->render_textfield(
 						array(
 							'slug'  => 'direccion',
 							'name'  => 'Dirección',
-							'value' => '',
+							'value' => $user_direccion,
 						)
 					);
 					?>

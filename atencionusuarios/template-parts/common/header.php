@@ -1,3 +1,11 @@
+<?php  
+/*
+
+*	Header con parametro de sub directorio asignable
+
+*/
+$subdirectory='/atencionusuarios/';
+?>
 <header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 90}">
 				<div class="header-body border-top-0 box-shadow-none">
 					<div class="header-container container container-lg">
@@ -5,7 +13,7 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="demo-it-services.html">
+										<a href="<?php echo $subdirectory; ?>home">
 											<img alt="Porto" width="50" height="50" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/logo.png">
 										</a>
 									</div>
@@ -18,36 +26,34 @@
 											<nav class="collapse">
 												<ul class="nav nav-pills" id="mainNav">
 													<li>
-														<a class="nav-link" href="demo-it-services-about-us.html">
+														<a class="nav-link" href="<?php echo $subdirectory; ?>elente/" id='elente'>
 															¿Que es el Ente?
 														</a>
                                                     </li>
                                                     <li>
-														<a class="nav-link" href="demo-it-services-blog.html">
+														<a class="nav-link" href="<?php echo $subdirectory; ?>news/" id='news'>
 															Noticias
 														</a>
 													</li>
 													<li class="dropdown">
-														<a class="dropdown-item dropdown-toggle" href="demo-it-services-services.html">
+														<a class="dropdown-item dropdown-toggle" href="<?php echo $subdirectory; ?>denuncia/" id='denuncia'>
 															Denuncias
 														</a>
 														<ul class="dropdown-menu">
 															<li>
-																<a class="nav-link" href="demo-it-services-services.html">Nueva denuncia</a>
+																<a class="nav-link" href="<?php echo $subdirectory; ?>denuncia/" id='denuncia'>
+																	Nueva denuncia
+																</a>
 															</li>
 															<li>
-																<a class="nav-link" href="demo-it-services-services-detail.html">Seguimiento de denuncia</a>
+																<a class="nav-link" href="<?php echo $subdirectory; ?>segdenuncia/" id='segdenuncia'>
+																	Seguimiento de denuncia
+																</a>
 															</li>
 														</ul>
 													</li>
-
 													<li>
-														<a class="nav-link" href="demo-it-services-careers.html">
-															Iniciar sesion
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="demo-it-services-contact.html">
+														<a class="nav-link" href="#footer" id='contact'>
 															Contacto
 														</a>
 													</li>

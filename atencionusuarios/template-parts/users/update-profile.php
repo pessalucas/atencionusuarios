@@ -1,7 +1,15 @@
 <?php
+	//Si el usuario esta logueado muestro el template
 	if( $user_id=get_current_user_id() ){ 
+
+		//Traigo informacion generica
 		$user_info=get_userdata( $user_id );
 		// print_r ($user_info);
+
+		//Utilizo para traer info extra a post
+		$user_dni = get_user_meta( $user_id, 'dni', true );
+		$user_telefono = get_user_meta( $user_id, 'telefono', true );
+		$user_direccion = get_user_meta( $user_id, 'direccion', true );
 ?>
 
 <section class="section custom-section-full-width bg-color-transparent border-0 mt-1 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-4.png); background-repeat: no-repeat; background-position: top right;">
@@ -33,10 +41,10 @@
 
 					<div class="form-row row-gutter-sm">
 						<div class="form-group col-lg-6 mb-4">
-							<input type="text" value="<?php echo $user_info->first_name;?>" data-msg-required="Nombre y apellido." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="name" id="name" required placeholder="Nombre y apellido.">
+							<input type="text" value="<?php echo $user_info->first_name;?>" data-msg-required="Nombre y apellido." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="name" id="name" required placeholder="Nombre y apellido." readonly>
 						</div>
 						<div class="form-group col-lg-6 mb-4">
-							<input type="text" value="<?php //echo $user_info->first_name;?>" data-msg-required="Telefono." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="phone" id="phone" required placeholder="Telefono.">
+							<input type="text" value="<?php echo $user_telefono; ?>" data-msg-required="Telefono." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="phone" id="phone" required placeholder="Telefono.">
 						</div>
 					</div>
 					<div class="form-row row-gutter-sm">
@@ -44,20 +52,15 @@
 							<input type="email" value="<?php echo $user_info->user_email;?>" data-msg-required="Dirección de correo electronico." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="email" id="email" required placeholder="Dirección de correo electronico.">
 						</div>
 						<div class="form-group col-lg-6 mb-4">
-							<input type="text" value="<?php //echo $user_info->first_name;?>" data-msg-required="DNI" maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="dni" id="dni" required placeholder="DNI">
+							<input type="text" value="<?php echo $user_dni; ?>" data-msg-required="DNI" maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="dni" id="dni" required placeholder="DNI">
 						</div>
 					</div>
 					<div class="form-row row-gutter-sm">
 						<div class="form-group col-lg-6 mb-4">
-							<input type="text" value="<?php echo $user_info->user_login; ?>" data-msg-required="Usuario." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="username" id="username" required placeholder="Usuario.">
+							<input type="text" value="<?php echo $user_info->user_login; ?>" data-msg-required="Usuario." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="username" id="username" required placeholder="Usuario." readonly>
 						</div>
 						<div class="form-group col-lg-6 mb-4">
-							<input type="text" value="" data-msg-required="Contraseña." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="password" id="password" required placeholder="Contraseña.">
-						</div>
-					</div>
-					<div class="form-row row-gutter-sm">
-						<div class="form-group col-lg-6 mb-4">
-							<input type="text" value="<?php echo $user_info->first_name;?>" data-msg-required="Domicilio." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="address" id="address" required placeholder="Domicilio.">
+							<input type="text" value="<?php echo $user_direccion;?>" data-msg-required="Domicilio." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="address" id="address" required placeholder="Domicilio.">
 						</div>
 					</div>
 					<div class="form-row">

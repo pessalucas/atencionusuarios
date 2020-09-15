@@ -1,19 +1,9 @@
 
 jQuery(document).ready(function($) {
 
-    // Show the login dialog box on click
-    $('a#show_login').on('click', function(e){
-        $('body').prepend('<div class="login_overlay"></div>');
-        $('form#login').fadeIn(500);
-        $('div.login_overlay, form#login a.close').on('click', function(){
-            $('div.login_overlay').remove();
-            $('form#login').hide();
-        });
-        e.preventDefault();
-    });
 
-    // Perform AJAX login on form submit
     $('form#login').on('submit', function(e){
+        e.preventDefault();
         $('form#login p.status').show().text(ajax_login_object.loadingmessage);
         $.ajax({
             type: 'POST',
@@ -36,7 +26,7 @@ jQuery(document).ready(function($) {
         }).fail( function(data){
             $('form#login p.status').text(data.message);
         });
-        e.preventDefault();
+     
     });
 
 });

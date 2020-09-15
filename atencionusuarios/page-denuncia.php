@@ -5,21 +5,22 @@
 </head>
 <body>
 	<?php get_template_part( 'template-parts/common/header' ); ?>
+  
+    <?php ente_get_template_part( 'template-parts/common/page-header', 
+            array(
+				'title'       => 'Denuncias',
+				'tag1'        => 'Home',
+                'tag2'        => 'Denuncias',
 
-	<?php get_template_part( 'template-parts/users/login-profile' ); ?>
+			) ); ?>
 
-	<?php get_template_part( 'template-parts/users/register-profile' ); ?>
+	<?php get_template_part( 'template-parts/denuncia/denuncia-main' ); ?>
+
 
 	<?php get_template_part( 'template-parts/common/footer' ); ?>
 	<?php get_template_part( 'template-parts/common/footerscripts' ); ?>
+
+
 </body>
 </html>
 
-<?php
-/* Por algun motivo no me permite entrar desde localhost/page-login.php 
-Me redirije a index.php. 
-
-page-id.php
-page-{slug}.php
-page.php
-index.php
