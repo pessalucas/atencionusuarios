@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 
     //Defino para la proxima pagina a pedir. Osea la 2. (6 se muestran automaticamente)
     var $page = 2;
-    $postperpage = 1;
+    $postperpage = 6;
 
     
 

@@ -36,12 +36,12 @@ $subdirectory='/atencionusuarios/';
 														</a>
 													</li>
 													<li class="dropdown">
-														<a class="dropdown-item dropdown-toggle" href="<?php echo $subdirectory; ?>denuncia/" id='denuncia'>
+														<a class="dropdown-item dropdown-toggle" href="<?php echo $subdirectory; ?>denuncias/" id='denuncias'>
 															Denuncias
 														</a>
 														<ul class="dropdown-menu">
 															<li>
-																<a class="nav-link" href="<?php echo $subdirectory; ?>denuncia/" id='denuncia'>
+																<a class="nav-link" href="<?php echo $subdirectory; ?>denuncias/" id='denuncias'>
 																	Nueva denuncia
 																</a>
 															</li>

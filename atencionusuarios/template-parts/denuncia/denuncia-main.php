@@ -18,7 +18,7 @@ $address='CABA'
       }*/
 
     </style>
-<section id="denuncias" class="section bg-color-transparent border-0 mt-0 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-3.png); background-repeat: no-repeat; background-position: top right;">
+<section id="denunciasearch" class="section bg-color-transparent border-0 mt-0 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-3.png); background-repeat: no-repeat; background-position: top right;">
                     <div class="container container-lg pt-3 mt-4">
                         <div class="row justify-content-center">
                             <div class="col-md-10 text-center">
@@ -44,9 +44,9 @@ $address='CABA'
 								<section class="toggle active">
 									<a class="toggle-title">Barrido</a>
 									<div class="toggle-content">
-                                        <p id='1'>Ausencia de servicio de barrido</p>
-                                        <p id='2'>Cordones libres de malezas</p>
-                                        <p id='3'>Otros barrido</p>
+                                        <p id='ausbarrido'>Ausencia de servicio de barrido</p>
+                                        <p id='cordlibmal'>Cordones libres de malezas</p>
+                                        <p id='otrosbarrido'>Otros barrido</p>
 									</div>
 								</section>
 								<section class="toggle">
@@ -167,7 +167,8 @@ $address='CABA'
                         </div>
                         <div class="row mb-4">
                             <div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
-                                <form class="contact-form" method="POST" id="denuncia" action="denuncia">
+                                <form class="contact-form" method="POST" id="denuncia" action="denuncia" enctype="multipart/form-data">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                                     <div class="contact-form-success alert alert-success d-none mt-4">
                                         <strong>Success!</strong> Your message has been sent to us.
                                     </div>
@@ -179,8 +180,8 @@ $address='CABA'
                                     
                                     <input type="hidden" name='direccion' id='direccion'>
                                     <input type="hidden" name='anomalia' id='anomalia'>
-                                    <input type="hidden" name='geo-x' id='geo-x'>
-                                    <input type="hidden" name='geo-y' id='geo-y'>
+                                    <input type="hidden" name='geolat' id='geolat'>
+                                    <input type="hidden" name='geolong' id='geolong'>
                                     <input type="hidden" name='comuna' id='comuna'>
                                     <input type="hidden" name='barrio' id='barrio'>
 
@@ -191,11 +192,9 @@ $address='CABA'
                                     </div>
                                     <div class="form-row row-gutter-sm">
                                         <div class="form-group col- mb-4">
-                                            <input type="file" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control border-0 custom-box-shadow-1 py-3 px-4 h-auto text-3 text-color-dark" name="file" id="file" placeholder="Your Name">
+                                            <input type="file" name="file" id="file">
                                         </div>
                                     </div>
-
-                                   
 
                                     <div class="form-row">
                                         <div class="form-group col mb-0">

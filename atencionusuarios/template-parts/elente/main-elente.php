@@ -38,25 +38,25 @@
                         </div>
                         <div class="row pt-4">
                             <div class="col-md-6 col-lg-3 text-center mb-5 mb-lg-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="650">
-                                <img src="img/demos/it-services/icons/backup-data-server.svg" class="img-fluid" width="100" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary pb-2 mb-4'}" />
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/elente/hig_urb.png" class="img-fluid" width="100" alt=""/>
                                 <h4 class="text-color-primary font-weight-bold text-6 mb-3">Higiene Urbana</h4>
                                 <p class="custom-text-size-1 px-lg-4">Pasando por la recolección, hasta el barrido.</p>
                                 <a href="demo-it-services-services-detail.html" class="text-color-dark font-weight-bold custom-text-size-1">READ MORE +</a>
                             </div>
                             <div class="col-md-6 col-lg-3 text-center mt-lg-5 mb-5 mb-lg-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="850">
-                                <img src="img/demos/it-services/icons/remove-monitor-access.svg" class="img-fluid" width="100" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark pb-2 mb-4'}" />
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/elente/hig_urb.png" class="img-fluid" width="100" alt="" />
                                 <h4 class="text-color-dark font-weight-bold text-6 mb-3">Alumbrado publico</h4>
                                 <p class="custom-text-size-1 px-lg-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra erat orci.</p>
                                 <a href="demo-it-services-services-detail.html" class="text-color-primary font-weight-bold custom-text-size-1">READ MORE +</a>
                             </div>
                             <div class="col-md-6 col-lg-3 text-center mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1050">
-                                <img src="img/demos/it-services/icons/password-lock-secure.svg" class="img-fluid" width="100" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary pb-2 mb-4'}" />
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/elente/hig_urb.png" class="img-fluid" width="100" alt=""/>
                                 <h4 class="text-color-primary font-weight-bold text-6 mb-3">Subterráneos</h4>
                                 <p class="custom-text-size-1 px-lg-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra erat orci.</p>
                                 <a href="demo-it-services-services-detail.html" class="text-color-dark font-weight-bold custom-text-size-1">READ MORE +</a>
                             </div>
                             <div class="col-md-6 col-lg-3 text-center mt-lg-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1250">
-                                <img src="img/demos/it-services/icons/floppy-disk-memory.svg" class="img-fluid" width="100" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark pb-2 mb-4'}" />
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/elente/hig_urb.png" class="img-fluid" width="100" alt="" />
                                 <h4 class="text-color-dark font-weight-bold text-6 mb-3">Semaforos</h4>
                                 <p class="custom-text-size-1 px-lg-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra erat orci.</p>
                                 <a href="demo-it-services-services-detail.html" class="text-color-primary font-weight-bold custom-text-size-1">READ MORE +</a>

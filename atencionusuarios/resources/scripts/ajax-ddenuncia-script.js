@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 
     //Ejecuto el cambio de pantalla para mostrar ahora otra informacion
         $('#denselector').hide();
-        $('#denuncias').hide();
+        $('#denunciasearch').hide();
         $('#infodenuncia').show();
         $('#datosdenuncia').show();
         $('#selector').show().text(textanomalia);
@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
     $('#back').click(function(e){
             //Ejecuto el cambio de pantalla para mostrar ahora otra informacion
             $('#denselector').show();
-            $('#denuncias').show();
+            $('#denunciasearch').show();
             $('#infodenuncia').hide();
             $('#datosdenuncia').hide();
     });
@@ -89,8 +89,8 @@ jQuery(document).ready(function($) {
 
 
                       //Inserto geo localizacion en formulario de envio de denuncia
-                      $('form#denuncia #geo-x').val(data.GeoCodificacion.x);
-                      $('form#denuncia #geo-y').val(data.GeoCodificacion.y);
+                      $('form#denuncia #geolat').val(data.GeoCodificacion.x);
+                      $('form#denuncia #geolong').val(data.GeoCodificacion.y);
 
                       //Inserto direccion en formulario de envio de denuncia
                       $('form#denuncia #direccion').val(direccioncompleta);

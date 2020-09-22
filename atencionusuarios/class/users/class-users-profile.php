@@ -24,6 +24,8 @@ if ( ! class_exists( 'Users_Profile' ) ) {
 			add_action( 'edit_user_profile', array( $this, 'render_profile_fields' ) );
 			add_action( 'personal_options_update', array( $this, 'save_profile_field' ) );
 			add_action( 'edit_user_profile_update', array( $this, 'save_profile_field' ) );
+
+
 		}
 		/**
 		 * Undocumented function
@@ -77,10 +79,10 @@ if ( ! class_exists( 'Users_Profile' ) ) {
 			<tr class="user-<?php echo esc_attr( $params['slug'] ); ?>-wrap">
 				<th>
 					<label for="<?php echo esc_attr( $params['slug'] ); ?>"><?php echo esc_html( $params['name'] ); ?></label></th>
-				<td>
-					<input type="text" name="<?php echo esc_attr( $params['slug'] ); ?>" id="<?php echo esc_attr( $params['slug'] ); ?>" aria-describedby="<?php echo esc_attr( $params['slug'] ); ?>-description" value="<?php echo esc_attr( $params['value'] ); ?>" class="regular-text ltr" />
-				</td>
-			</tr>
+					<td>
+						<input type="text" name="<?php echo esc_attr( $params['slug'] ); ?>" id="<?php echo esc_attr( $params['slug'] ); ?>" aria-describedby="<?php echo esc_attr( $params['slug'] ); ?>-description" value="<?php echo esc_attr( $params['value'] ); ?>" class="regular-text ltr" />
+					</td>
+				</tr>
 			<?php
 		}
 		/**
