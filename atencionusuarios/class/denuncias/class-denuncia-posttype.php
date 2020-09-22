@@ -75,6 +75,7 @@ if ( ! class_exists( 'Denuncia_PostType' ) ) {
 				'has_archive'         => true,
 				'menu_position'       => null,
 				'supports'            => array( 'author', 'comments' ),
+				'taxonomies'          => array( 'servicio', 'ubicacion' ),
 			);
 			register_post_type( 'denuncia', $args );
 		}
