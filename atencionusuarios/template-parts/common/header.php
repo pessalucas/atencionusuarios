@@ -14,7 +14,7 @@ $subdirectory='/atencionusuarios/';
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="<?php echo $subdirectory; ?>home">
-											<img alt="Porto" width="50" height="50" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/logo.png">
+											<img alt="Ente" width="220" height="70" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/header/logo.png">
 										</a>
 									</div>
 								</div>
@@ -36,12 +36,12 @@ $subdirectory='/atencionusuarios/';
 														</a>
 													</li>
 													<li class="dropdown">
-														<a class="dropdown-item dropdown-toggle" href="<?php echo $subdirectory; ?>denuncia/" id='denuncia'>
+														<a class="dropdown-item dropdown-toggle" href="<?php echo $subdirectory; ?>denuncias/" id='denuncias'>
 															Denuncias
 														</a>
 														<ul class="dropdown-menu">
 															<li>
-																<a class="nav-link" href="<?php echo $subdirectory; ?>denuncia/" id='denuncia'>
+																<a class="nav-link" href="<?php echo $subdirectory; ?>denuncias/" id='denuncias'>
 																	Nueva denuncia
 																</a>
 															</li>
@@ -66,9 +66,20 @@ $subdirectory='/atencionusuarios/';
 									</div>
 									<div class="d-none d-sm-inline-flex order-1 order-lg-2 ml-2">
 										<ul class="header-extra-info d-flex">
-											<li class="d-flex flex-column">
-												<span class="d-block font-weight-semibold text-color-dark text-2 line-height-3">NUMERO</span>
-												<a href="tel:+1234567890" class="font-weight-bold text-color-primary text-5">800-123-4567</a>
+											<li>
+											<a href="https://www.facebook.com/entedelaciudad/">
+												<i class="fab fa-facebook"></i>
+											</a>
+											</li>
+											<li>
+											<a href="https://twitter.com/EntedelaCiudad">
+												<i class="fab fa-twitter-square"></i>
+											</a>
+											</li>
+											<li>
+											<a href="https://www.instagram.com/entedelaciudadok/">
+												<i class="fab fa-instagram-square"></i>
+											</a>
 											</li>
 										</ul>
 									</div>

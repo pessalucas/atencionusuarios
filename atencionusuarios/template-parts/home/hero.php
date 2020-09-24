@@ -10,12 +10,12 @@ $link  = ente_get_var( 'link', true );
 
 <div role="main" class="main">
 
-                <div class="slider-container rev_slider_wrapper" style="height: 750px;">
+                <div class="slider-container rev_slider_wrapper" style="height: 600px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1110, 'gridheight': [750,750,750,1250], 'responsiveLevels': [4096,1200,992,500]}">
 						<ul>
 							<li class="slide-overlay slide-overlay-level-7" data-transition="fade">
 
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/img2.jpg"  
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/callcenter.jpg"  
 									alt=""
 									data-bgposition="center center" 
 									data-bgfit="cover" 
@@ -32,6 +32,7 @@ $link  = ente_get_var( 'link', true );
 									data-bgparallax="0"
 									class="rev-slidebg">
 
+
 								<div class="tp-caption tp-caption-overlay-opacity top-label font-weight-semibold"
 									data-frames='[{"delay":1000,"speed":1000,"sfxcolor":"#212529","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"sfxcolor":"#212529","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
 									data-x="left" data-hoffset="['0','30','30','30']"
@@ -40,7 +41,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingtop="['10','10','10','12']"
 									data-paddingbottom="['10','10','10','12']"
 									data-paddingleft="['18','18','18','18']"
-									data-paddingright="['18','18','18','18']">WE WORK AND WE MAKE</div>
+									data-paddingright="['18','18','18','18']">Controlemos juntos</div>
 
 								<h1 class="tp-caption tp-caption-overlay-opacity main-label"
 									data-frames='[{"delay":1300,"speed":1000,"sfxcolor":"#212529","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"sfxcolor":"#212529","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
@@ -51,12 +52,8 @@ $link  = ente_get_var( 'link', true );
 									data-paddingtop="['10','10','10','10']"
 									data-paddingbottom="['10','10','10','10']"
 									data-paddingleft="['18','18','18','18']"
-									data-paddingright="['18','18','18','18']">DESIGNS ROCK STARS</h1>
+									data-paddingright="['18','18','18','18']">los servicios publicos</h1>
 
-								<div class="tp-caption d-none d-md-block"
-									data-frames='[{"delay":3000,"speed":500,"frame":"0","from":"opacity:0;x:10%;","to":"opacity:1;x:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-									data-x="left" data-hoffset="['330','360','360','135']"
-									data-y="center" data-voffset="['30','30','30','-62']"><img src="img/slides/slide-white-line.png" alt=""></div>
 
 
 								<div class="tp-caption font-weight-light text-color-light ws-normal"
@@ -65,7 +62,7 @@ $link  = ente_get_var( 'link', true );
 									data-y="center" data-voffset="['65','65','65','95']"
 									data-width="['690','690','690','800']"
 									data-fontsize="['18','18','18','35']"
-									data-lineheight="['29','29','29','40']">We create amazing solutins for our clients, contact us to learn how we can help.</div>
+									data-lineheight="['29','29','29','40']">Tu reclamo hace la diferencia</div>
 
 
 								<a class="tp-caption btn btn-outline btn-primary font-weight-bold"
@@ -78,7 +75,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingleft="['40','40','40','50']"
 									data-paddingright="['40','40','40','50']"
 									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">LEARN MORE</a>
+									data-lineheight="['20','20','20','25']">Saber mas</a>
 
 								<a class="tp-caption btn btn-primary font-weight-bold"
 									href="#"
@@ -90,11 +87,11 @@ $link  = ente_get_var( 'link', true );
 									data-paddingleft="['40','40','40','50']"
 									data-paddingright="['40','40','40','50']"
 									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">GET STARTED NOW <i class="fas fa-arrow-right ml-1"></i></a>
+									data-lineheight="['20','20','20','25']">Realizar denuncia <i class="fas fa-arrow-right ml-1"></i></a>
 
 							</li>
 							<li class="slide-overlay slide-overlay-level-7" data-transition="fade">
-								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/img.jpg"  
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/subte.jpg"  
 									alt=""
 									data-bgposition="center center" 
 									data-bgfit="cover" 
@@ -119,7 +116,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingtop="['10','10','10','12']"
 									data-paddingbottom="['10','10','10','12']"
 									data-paddingleft="['18','18','18','18']"
-									data-paddingright="['18','18','18','18']">HELLO, WE CREATE</div>
+									data-paddingright="['18','18','18','18']">Contactanos</div>
 
 								<div class="tp-caption tp-caption-overlay-opacity main-label"
 									data-frames='[{"delay":1300,"speed":1000,"sfxcolor":"#212529","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"sfxcolor":"#212529","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
@@ -129,7 +126,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingtop="['10','10','10','12']"
 									data-paddingbottom="['10','10','10','12']"
 									data-paddingleft="['18','18','18','18']"
-									data-paddingright="['18','18','18','18']">INCREDIBLE DESIGNS</div>
+									data-paddingright="['18','18','18','18']">0800-222-ENTE (3683)</div>
 
 								<div class="tp-caption font-weight-light text-color-light ws-normal"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
@@ -137,7 +134,7 @@ $link  = ente_get_var( 'link', true );
 									data-y="center" data-voffset="['65','65','65','105']"
 									data-width="['600','600','600','600']"
 									data-fontsize="['18','18','18','30']"
-									data-lineheight="['29','29','29','40']">amazing solutions for our clients, contact us to learn how we can help.</div>
+									data-lineheight="['29','29','29','40']">Tu reclamo hace la diferencia</div>
 
 								<a class="tp-caption btn btn-primary font-weight-bold"
 									href="#"
@@ -149,7 +146,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingleft="['40','40','40','50']"
 									data-paddingright="['40','40','40','50']"
 									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">GET STARTED NOW <i class="fas fa-arrow-right ml-1"></i></a>
+									data-lineheight="['20','20','20','25']">Realizar denuncia <i class="fas fa-arrow-right ml-1"></i></a>
 
 							</li>
 						</ul>
@@ -162,7 +159,7 @@ $link  = ente_get_var( 'link', true );
                 <div class="col-xl-7 pb-5 pb-xl-0 mb-5 mb-xl-0">
                     <div class="custom-overlapping-cards">
                         <div class="card border-0 box-shadow-1 pl-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/hero2.jpg" class="card-img-top rounded-0 img-fluid" alt="IT Consulting">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/parada.jpg" class="card-img-top rounded-0 img-fluid" alt="IT Consulting">
                             <div class="card-body pt-4">
                                 <h4 class="custom-heading-bar font-weight-bold text-color-dark text-5">COMPROMISO</h4>
                                 <p class="custom-font-secondary text-4 mb-3">El organismo sigue en funcionamiento <strong class="text-color-dark">controlando los servicios escenciales</strong> a pesar de la pandemia.</p>
@@ -170,9 +167,9 @@ $link  = ente_get_var( 'link', true );
                         </div>
                         <div class="card-transform">
                             <div class="card border-0 box-shadow-1 pr-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/hero1.png" class="card-img-top rounded-0 img-fluid" alt="IT Support">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/flor.jpg" class="card-img-top rounded-0 img-fluid" alt="IT Support">
                                 <div class="card-body pt-4">
-                                    <h4 class="custom-heading-bar custom-heading-bar-right font-weight-bold text-color-dark text-right text-5">20 AÑOS CON VOS, UNA CIUDAD CON VOZ</h4>
+                                    <h4 class="custom-heading-bar custom-heading-bar-right font-weight-bold text-color-dark text-right text-5">20 AÑOS CON VOS, UNA <br> CIUDAD CON VOZ</h4>
                                     <p class="text-right custom-font-secondary text-4 pl-4 ml-3 mb-3">Orgullosos de defender tus derechos. Conoce mas sobre el organismo.</p>
                                 </div>
                             </div>

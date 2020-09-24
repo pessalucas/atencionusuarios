@@ -5,33 +5,93 @@ jQuery(document).ready(function($) {
     $('#infodenuncia').hide();
     $('#datosdenuncia').hide();
 
-    //Evengo para todos los p dentro toggles
+    //Evento para todos los p dentro toggles
     $('section.toggle p').click(function(e){
 
-    //Traigo id del elemento para conocer la anomalia
-    var idanomalia = $(this).attr("id");
-    
+    //Traigo id del elemento para conocer la anomalia y servicio
+    var idgrupoanomalia = $(this).attr("id");
+    var servicio = $(this).data('servicio');
+
     //Obtengo texto del id
     var textanomalia= $(this).text();
 
-    //La asigno al formulario de envio de denuncia
-    $('form#denuncia #anomalia').val(idanomalia);
+    //Combino los textos
+    var textservicioanomalia = servicio + '. ' + textanomalia + '.';
 
+    //Perticion ajax para obtener los ids de anomalias asociados a ese tipo de anomalia
+          $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: ajax_denuncia_object.ajaxurl,
+            data: { 
+                'action': 'ajaxgrupoanomalias', 
+                'id_anomalia' : idgrupoanomalia/*, 
+            'security': $('form#denuncia #security').val() */},
+
+            success: function(data){
+                  console.log(data.anomalias);
+
+                count = 0;
+                data.anomalias.forEach(function() {
+                        $( '#anomalias' ).append(function() {
+                                var article=`
+                            <div class="col-lg-3" id = '`+  data.anomalias[count].id + `'>
+                                <blockquote class="blockquote-primary">
+                                  <p>`+  data.anomalias[count].name + `</p>
+                                  <footer>`+  data.anomalias [count].description + `</footer>
+                                </blockquote>
+                            </div>
+                            `;
+                        return article;
+                   });
+                count++;
+                });
+
+                 //Evento para todos los p dentro toggles
+                $('#anomalias div').click(function(e){
+                  var idanomalia = $(this).attr("id");
+                  var textanomalia= $(this).text();
+
+                  //Asigno al formulario el id de anomalia
+                  $('form#denuncia #anomalia').val(idanomalia);
+
+                  //Borro los div y asigno al texto de arriba lo escogido.
+                  $('#anomalias').remove();
+
+                  textserviciogrupoanomalia = textservicioanomalia + '. ' + textanomalia + '.';
+                  //Inserto el nuevo texto.
+                  $('#selector').show().text(textserviciogrupoanomalia);                  
+                });
+
+            },
+            fail: function(data){
+              console.log('failed');
+            }
+        }).fail( function(data){
+              console.log('failed');
+        });
+    
 
     //Ejecuto el cambio de pantalla para mostrar ahora otra informacion
         $('#denselector').hide();
-        $('#denuncias').hide();
+        $('#denunciasearch').hide();
         $('#infodenuncia').show();
         $('#datosdenuncia').show();
-        $('#selector').show().text(textanomalia);
+        $('#selector').show().text(textservicioanomalia);
+
     });
 
+    
+   
+
+    //Evento para volver a la pantalla de atras
     $('#back').click(function(e){
             //Ejecuto el cambio de pantalla para mostrar ahora otra informacion
             $('#denselector').show();
-            $('#denuncias').show();
+            $('#denunciasearch').show();
             $('#infodenuncia').hide();
             $('#datosdenuncia').hide();
+            $('#anomalias').empty();
     });
 
 
@@ -89,8 +149,8 @@ jQuery(document).ready(function($) {
 
 
                       //Inserto geo localizacion en formulario de envio de denuncia
-                      $('form#denuncia #geo-x').val(data.GeoCodificacion.x);
-                      $('form#denuncia #geo-y').val(data.GeoCodificacion.y);
+                      $('form#denuncia #geolat').val(data.GeoCodificacion.x);
+                      $('form#denuncia #geolong').val(data.GeoCodificacion.y);
 
                       //Inserto direccion en formulario de envio de denuncia
                       $('form#denuncia #direccion').val(direccioncompleta);

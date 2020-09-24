@@ -8,9 +8,9 @@
 
 //Obtengo slug de la categoria
 $urlrelative = $_SERVER['REQUEST_URI'];
-$urlrelativecut = substr($urlrelative,18,100);
+//El 27 corresponde al lugar desde donde chequea url 
+$urlrelativecut = substr($urlrelative,27,100);
 $slug = str_replace("/","",$urlrelativecut);
-
 
 //Convierto el slug en id category. Si vale 0 
 if ( ! $id_category = get_category_by_slug( $slug ) ){
@@ -19,7 +19,7 @@ if ( ! $id_category = get_category_by_slug( $slug ) ){
     $id_category=$id_category->term_id;
 }
 
-
+//No tiene sentido, solo si la pagina tiene contenido
 if ( have_posts() ) {
 
 ?>
@@ -34,7 +34,7 @@ if ( have_posts() ) {
                                     ///IF HAVE POST THE POST FOR CATEGORY
                                     //QUERY POST SOLO PARA PAGINAS CUSTOM
                                         $query_post=new WP_Query(array(
-                                            'posts_per_page' => '1',
+                                            'posts_per_page' => '6',
                                             'post_type' => 'post',
                                             'paged'  => '1',
                                             'cat' => $id_category 
@@ -101,7 +101,7 @@ if ( have_posts() ) {
 
 <?php
 //Iria 6 si es 6 por pagina
-if($count==1){ 
+if($count==6){ 
 ?>
                         <form  method="POST" id="loadnews" action="loadnews">
                         <p class="status"></p>
