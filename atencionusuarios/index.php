@@ -8,9 +8,9 @@
 
 	<?php // get_template_part( 'template-parts/users/login-profile' ); ?>
 
-	<?php //  get_template_part( 'template-parts/users/register-profile' ); ?>
+	<?php  get_template_part( 'template-parts/users/register-profile' ); ?>
 
-	<?php   get_template_part( 'template-parts/users/update-profile' ); ?>
+	<?php   //get_template_part( 'template-parts/users/update-profile' ); ?>
 
 	<?php  // get_template_part( 'template-parts/users/changepassword-profile' ); ?>
 

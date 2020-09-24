@@ -3969,7 +3969,7 @@ window.theme.fn = {
 			},
 
 			initialize: function(opts) {
-				initialized = true;
+				this.initialized = true;
 
 				this
 					.setOptions(opts)
@@ -3996,13 +3996,21 @@ window.theme.fn = {
 
 				$.validator.setDefaults(self.options.validator);
 
-				$('.' + self.options.formClass).validate();
+				
+
+				$( '.' + self.options.formClass).each( function(){
+					$( this ).validate();
+				});
 
 				return this;
 			},
 
 			addMethods: function() {
 				var self = this;
+
+				$.validator.addMethod("PASSWORD", function (value, element) {
+                    return this.optional(element) || /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}$/i.test(value);
+                }, "La contraseña debe tenere entre 8-16 carácteres y al menos un número."); 
 
 				$.validator.addMethod('captcha', function(value, element, params) {
 					var captchaValid = false;
@@ -4162,11 +4170,11 @@ window.theme.fn = {
 			},
 
 			initialize: function($wrapper, opts) {
-				if (initialized) {
+				if (this.initialized) {
 					return this;
 				}
 
-				initialized = true;
+				this.initialized = true;
 				this.$wrapper = ($wrapper || this.defaults.wrapper);
 
 				this

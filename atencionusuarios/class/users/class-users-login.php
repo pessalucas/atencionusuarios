@@ -21,11 +21,11 @@ if ( ! class_exists( 'Users_Login' ) ) {
 		 */
 		public function __construct() {
 
-			add_action( 'wp_ajax_nopriv_ajaxlogin',array($this, 'ajax_login'));
+			add_action( 'wp_ajax_nopriv_ajaxlogin', array( $this, 'ajax_login' ) );
 
-			// Ejectua si NO esta logueado
-			if (!is_user_logged_in()) {
-				add_action('init', array($this,'ajax_login_init'));
+			// Ejectua si NO esta logueado.
+			if ( ! is_user_logged_in() ) {
+				add_action( 'init', array( $this, 'ajax_login_init' ) );
 			}
 
 		}
