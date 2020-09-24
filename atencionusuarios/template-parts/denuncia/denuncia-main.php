@@ -2,117 +2,145 @@
 /*
 Realiza tu denuncia
 */
-//src="https://maps.google.com/maps?q=goyena+1608&output=embed"
+
+//Focaliza en mapa CABA como zona de fiscalizacion del organismo, previo a busqueda
 $address='CABA'
 ?>
-  <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map.
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. 
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }*/
-
-    </style>
-<section id="denunciasearch" class="section bg-color-transparent border-0 mt-0 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-3.png); background-repeat: no-repeat; background-position: top right;">
-                    <div class="container container-lg pt-3 mt-4">
-                        <div class="row justify-content-center">
-                            <div class="col-md-10 text-center">
-                                <div class="overflow-hidden mb-2">
-                                    <span class="d-block font-weight-bold custom-text-color-grey-1 line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="600">Solicitudes de servicio</span>
+    <section id="denunciasearch" class="section bg-color-transparent border-0 mt-0 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-3.png); background-repeat: no-repeat; background-position: top right;">
+                        <div class="container container-lg pt-3 mt-4">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 text-center">
+                                    <div class="overflow-hidden mb-2">
+                                        <span class="d-block font-weight-bold custom-text-color-grey-1 line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="600">Solicitudes de servicio</span>
+                                    </div>
+                                    <div class="overflow-hidden mb-4">
+                                        <h2 class="text-color-dark font-weight-bold text-8 line-height-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="800">Realiza tu denuncia</h2>
+                                    </div>
+                                    <p class="custom-text-size-1 mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">Podes realizar la denuncia de manera 100% online a traves del buscador o los desplegables que se encuentran a contiuacion</p>
+                                    <form action="">
+                                    <input type="text">
+                                    <p>Searcher</p>
+                                    </form>
                                 </div>
-                                <div class="overflow-hidden mb-4">
-                                    <h2 class="text-color-dark font-weight-bold text-8 line-height-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="800">Realiza tu denuncia</h2>
-                                </div>
-                                <p class="custom-text-size-1 mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">Podes realizar la denuncia de manera 100% online a traves del buscador o los desplegables que se encuentran a contiuacion</p>
-                                <form action="">
-                                <input type="text">
-                                <p>Searcher</p>
-                                </form>
                             </div>
                         </div>
-                    </div>
-</section>
+    </section>
 
-    <div class="row" id='denselector'>
-						<div class="col-lg-4">
-							<div class="toggle toggle-primary" data-plugin-toggle>
-								<section class="toggle active">
-									<a class="toggle-title">Barrido</a>
-									<div class="toggle-content">
-                                        <p id='ausbarrido'>Ausencia de servicio de barrido</p>
-                                        <p id='cordlibmal'>Cordones libres de malezas</p>
-                                        <p id='otrosbarrido'>Otros barrido</p>
-									</div>
-								</section>
-								<section class="toggle">
-									<a class="toggle-title">Cesto papelero</a>
-									<div class="toggle-content">
-                                        <p id='4'>Ausencia de servicio de barrido</p>
-                                        <p id='5'>Cordones libres de malezas</p>
-                                        <p id='6'>Otros barrido</p>
-                                    </div>
-								</section>
-								<section class="toggle">
-									<a class="toggle-title">Contenedor de residuos humedos</a>
-									<div class="toggle-content">
-                                        <p id='7'>Ausencia de servicio de barrido</p>
-                                        <p id='8'>Cordones libres de malezas</p>
-                                        <p id='9'>Otros barrido</p>	
-                                    </div>
-								</section>
-							</div>
-                        </div>
-                        <div class="col-lg-4">
-							<div class="toggle toggle-primary" data-plugin-toggle>
-								<section class="toggle">
-									<a class="toggle-title">Curabitur eget leo at velit imperdiet vague iaculis vitaes?</a>
-									<div class="toggle-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.</p>
-									</div>
-								</section>
-								<section class="toggle">
-									<a class="toggle-title">Curabitur eget leo at imperdiet vague iaculis vitaes?</a>
-									<div class="toggle-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor.</p>
-									</div>
-								</section>
-								<section class="toggle">
-									<a class="toggle-title">Curabitur eget leo at velit imperdiet vague iaculis vitaes?</a>
-									<div class="toggle-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor, orci eros pellentesque odio, nec pellentesque erat ligula nec massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.</p>
-									</div>
-								</section>
-							</div>
-                        </div>
-                        <div class="col-lg-4">
-							<div class="toggle toggle-primary" data-plugin-toggle>
-								<section class="toggle">
-									<a class="toggle-title">Curabitur eget leo at velit imperdiet vague iaculis vitaes?</a>
-									<div class="toggle-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet.</p>
-									</div>
-								</section>
-								<section class="toggle">
-									<a class="toggle-title">Curabitur eget leo at imperdiet vague iaculis vitaes?</a>
-									<div class="toggle-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor.</p>
-									</div>
-								</section>
-								<section class="toggle">
-									<a class="toggle-title">Curabitur eget leo at velit imperdiet vague iaculis vitaes?</a>
-									<div class="toggle-content">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor, orci eros pellentesque odio, nec pellentesque erat ligula nec massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.</p>
-									</div>
-								</section>
-							</div>
-                        </div>
+<?php  
+    //Cantidad de filas por columna. @rows PARAMETRO
+    $rows= 5;
+    $count = 0;
+   
+    //Genero la estrucutra de los diferentes tipos de denuncia que se pueden lograr
+    $terms_deptos = get_terms( array(
+        'taxonomy' => 'servicios',
+        'hide_empty' => false,
+        'parent'   => 0
+    ) );
+?>
+<div class="row" id='denselector'>           
+                                    <?php  
+                                        foreach ( $terms_deptos as $terms_depto ) {
+                                            $depto_id = $terms_depto->term_id;
+                                            $terms_servicios = get_terms( array(
+                                                'taxonomy' => 'servicios',
+                                                'hide_empty' => false,
+                                                'parent'   => $depto_id
+                                            ) );
+                                    
+                                            foreach ( $terms_servicios as $terms_servicio ){
+                                                $servicios_id = $terms_servicio->term_id;
+                                                $servicios_slug = $terms_servicio->slug;
+                                                $servicios_name =  $terms_servicio->name;
+                                                $terms_grupoanomalias = get_terms( array(
+                                                    'taxonomy' => 'servicios',
+                                                    'hide_empty' => false,
+                                                    'parent'   => $servicios_id
+                                                ) );
+                                            // print_r ($terms_grupoanomalias);
+
+                                                if ( (($count % $rows)== 0) OR ($count == 0)){ 
+                                                ?>
+                                              
+                                                                    <div class="col-lg-4">
+                                                                        <div class="toggle toggle-primary" data-plugin-toggle>  
+                                                <?php 
+                                                }
+                                                $count++;
+                                                
+                                                ?>
+                                                <section class="toggle">
+                                                <a class="toggle-title">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bots/<?php echo $servicios_slug; ?>.png" class="img-fluid iconsmain" width="50" alt="" style='filter: grayscale(1);'/>
+                                                    <?php echo $servicios_name; ?>
+                                                </a>
+                                                    <div class="toggle-content">
+                                                <?php  
+                                                    
+                                                    foreach ( $terms_grupoanomalias as $terms_grupoanomalia ){
+                                                        $grupoanomalia_id = $terms_grupoanomalia->term_id;
+                                                        $grupoanomalia_name =  $terms_grupoanomalia->name;
+                                                    // print_r ($terms_grupoanomalias);
+                                                    
+                                                        ?>
+                                                        <p id='<?php echo $grupoanomalia_id; ?>' data-servicio='<?php echo $servicios_name; ?>' ><?php echo $grupoanomalia_name; ?></p>
+                                                        <?php  
+                                                }
+                                                ?>
+                                                    </div>
+                                                </section>
+                                                <?php 
+                                                if ( (($count % $rows)== 0) ){
+                                                ?>
+                                                        </div>
+                                                    </div>
+                                                <?php 
+                                                    $cerrado = true;
+                                                }else{
+                                                    $cerrado = false;
+                                                }
+                                            }
+                                        }
+                                    ?>
+
+<?php 
+     if (! $cerrado ){
+?>
+                </div>
+            </div>
+<?php 
+      }
+?>
+ </div> 
+
         </div>
-        <div>
+
+
+        <div id='datosdenuncia'>
+        <section  class="section custom-section-full-width bg-color-transparent border-0 mt-1 mb-1" style="background-image: url(img/demos/it-services/backgrounds/dots-background-4.png); background-repeat: no-repeat; background-position: top right;">
+                    <div class="container container-lg mt-3">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="overflow-hidden mb-2">
+                                    <span class="d-block font-weight-bold custom-text-color-grey-1 text-center line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">DENUNCIAS</span>
+                                </div>
+                                <div class="overflow-hidden mb-4">
+                                    <h2 class="text-color-dark font-weight-bold text-center text-8 line-height-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">Solicitud de servicio</h2>
+                                </div>
+                                <h6 class="font-weight-bold text-6" id='selector' name='selector'></h6>
+                                    <div class="row" id='anomalias'>
+                                            <?php 
+                                                /*
+                                                * Aqui Jquery inserta las anomalias asociadas al grupo seleccionado
+                                                *
+                                                */
+                                            ?>
+									</div>
+                                </div>
+                            </div>
+                            <h1 id='back' name='back'>X</h1>
+                        </div>
+        </section>
                 <section class="section border-0 py-0 m-0" id='infodenuncia'>
                     <div class="container-fluid">
                         <div class="row">
@@ -125,8 +153,6 @@ $address='CABA'
                                                     <img src="img/demos/it-services/icons/building.svg" class="img-fluid" width="95" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" />
                                                 </div>
                                                 <div class="feature-box-info pl-2 pt-1">
-                                                    <h1 id='back' name='back' style='color:white;'>X</h1>
-                                                    <h4 class="text-color-light font-weight-bold text-6" id='selector' name='selector'></h4>
                                                     <form method="GET" id="ddenuncia" action="ddenuncia">
                                                     <input type="text" placeholder="Direccion" id="direccion" name="direccion">
                                                     <input type="text" placeholder="1234" id="altura" name="altura">
@@ -156,12 +182,6 @@ $address='CABA'
                     <div class="container container-lg mt-3">
                         <div class="row justify-content-center">
                             <div class="col-lg-10">
-                                <div class="overflow-hidden mb-2">
-                                    <span class="d-block font-weight-bold custom-text-color-grey-1 text-center line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">DENUNCIAS</span>
-                                </div>
-                                <div class="overflow-hidden mb-4">
-                                    <h2 class="text-color-dark font-weight-bold text-center text-8 line-height-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">Solicitud de servicio</h2>
-                                </div>
                                 <p class="custom-text-size-1 text-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Para finalizar completa los campos que creas de importancia.</p>
                             </div>
                         </div>
@@ -210,32 +230,6 @@ $address='CABA'
 
         </div>
 
-        <?php  
-/*
 
-        <script type='text/javascript'
-            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AgQ46oWu4lqg0N2MrXstQ4SXMGITqv23s5V4RTV1X9OmmLI5798043lb_d1u40qN' 
-            async defer></script>
-    
-            <script type='text/javascript'>
-    function GetMap() {
-        var map = new Microsoft.Maps.Map('#myMap', {
-            credentials: 'Your Bing Maps Key',
-            center: new Microsoft.Maps.Location(47.6149, -122.1941)
-        });
-
-        var center = map.getCenter();
-
-        //Create custom Pushpin
-        var pin = new Microsoft.Maps.Pushpin(center, {
-            title: 'Microsoft',
-            subTitle: 'City Center',
-            text: '1'
-        });
-
-        //Add the pushpin to the map
-        map.entities.push(pin);
-    }
-    </script>
 
 

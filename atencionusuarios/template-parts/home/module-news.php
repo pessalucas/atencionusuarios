@@ -11,10 +11,10 @@ if ( have_posts() ) {
 		<div class="row pt-3 mt-4">
 			<div class="col">
 				<div class="overflow-hidden mb-2">
-					<span class="d-block font-weight-bold custom-text-color-grey-1 text-center line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">RESOURCES</span>
+					<span class="d-block font-weight-bold custom-text-color-grey-1 text-center line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">BLOG</span>
 				</div>
 				<div class="overflow-hidden mb-5">
-					<h2 class="text-color-dark font-weight-bold text-center text-8 line-height-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">The Porto Blog</h2>
+					<h2 class="text-color-dark font-weight-bold text-center text-8 line-height-2 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">El Ente News</h2>
 				</div>
 			</div>
 		</div>

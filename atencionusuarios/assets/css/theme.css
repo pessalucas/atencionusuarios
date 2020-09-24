@@ -13,7 +13,7 @@ html {
 body {
 	background-color: #FFF;
 	color: #777;
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 	line-height: 26px;
 	margin: 0;
@@ -142,7 +142,7 @@ li {
 
 #header .header-column .header-extra-info li {
 	display: inline-flex;
-	margin-left: 25px;
+	margin-left: 8px;
 }
 
 #header .header-column .header-extra-info li .header-extra-info-icon {
@@ -356,6 +356,7 @@ li {
 
 #header .header-nav-top .nav > li.nav-item.dropdown.show .nav-link {
 	background: transparent;
+	font-weight: Black ;
 }
 
 #header .header-nav-top .nav > li.nav-item:not(.dropdown) > a [class*="fa-"], #header .header-nav-top .nav > li.nav-item:not(.dropdown) > a .icons {
@@ -3144,7 +3145,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 	}
 
 	#header .header-nav-main nav > ul li a {
-		font-size: 13px;
+		font-size: 18px;
 		font-style: normal;
 		line-height: 20px;
 		padding: 7px 8px;
@@ -3255,7 +3256,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 
 	#header .header-nav-main nav > ul > li > a {
 		text-transform: uppercase;
-		font-weight: 700;
+		font-weight: bolder;
 		margin-top: 1px;
 		margin-bottom: 1px;
 		color: #CCC;
@@ -7366,4 +7367,24 @@ html.gap-outside .pin-wrapper .sticky-wrapper.sticky-effect-active .sticky-body 
 html.gap-outside .pin-wrapper .sticky-wrapper.sticky-effect-active .sticky-body .container-fluid {
 	padding-left: 25px;
 	padding-right: 25px;
+}
+
+.fab{
+	font-size: 32px;
+	transition:all 0.3s ease;
+	color: grey;
+}
+
+.fa-facebook:hover{
+	color : #3b5998;
+}
+.fa-twitter-square:hover{
+	color :  #00acee;
+}
+.fa-instagram-square:hover{
+	color : #8134AF;
+}
+
+.iconsmain{
+	margin-bottom : 15px;
 }

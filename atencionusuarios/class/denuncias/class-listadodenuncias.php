@@ -45,7 +45,7 @@ if ( ! class_exists( 'ListadoDenuncias' ) ) {
 		public function ajax_listadodenuncias(){
         
             //Tomo id de denucia
-            $iddenuncia=$_POST['iddenuncia'];
+            $iddenuncia=sanitize_text_field( $_POST['iddenuncia']);
 
             //Obtengo taxonomys de estado y tipo de servicio
             $estado=get_the_terms( $iddenuncia, 'estado' ); //array

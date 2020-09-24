@@ -10,6 +10,7 @@
 
 <!-- Web Fonts  -->
 <link href="https://fonts.googleapis.com/css?family=family=Lora:400,400i,700,700i|Poppins:300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet">
 
 <!-- Vendor CSS -->
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -42,7 +43,9 @@
 
 <!-- Head Libs -->
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/vendor/modernizr/modernizr.min.js"></script>
-        
+       
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/6341488579.js" crossorigin="anonymous"></script>
 
 
 <?php wp_head(); ?>
