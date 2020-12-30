@@ -18,11 +18,11 @@
 			</div>
 			<div class="form-row">
 				<div class="form-group col">
-					<a class="float-right" href="<?php echo esc_url( home_url( 'recuperar-contrasena' ) ); ?>">Olvide mi contraseña</a>
 					<label class="font-weight-bold text-dark text-2">Contraseña</label>
 					<input type="password" name="password" class="form-control form-control-lg" required>
 				</div>
 			</div>
+			
 			<div class="form-row">
 				<div class="form-group col-lg-6">
 					<div class="custom-control custom-checkbox">
@@ -36,5 +36,43 @@
 				<div class="form-group col" id="loginError"></div>
 			</div>
 		</form>
+			<div class="row">
+					<button class="btn btn-modern btn-primary" data-toggle="modal" data-target="#formModal">
+						Recuperar contraseña
+					</button>
+			</div>
 	</div>
 </div>
+
+
+									<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="modal-title" id="formModalLabel">Recuperar contraseña</h4>
+													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												</div>
+												<div class="modal-body">
+													<form id="formnewpass" class="" novalidate="novalidate">
+														
+														<div class="form-group row align-items-center">
+															<label class="col-sm-3 text-left text-sm-right mb-0">Email</label>
+															<div class="col-sm-9">
+																<input type="email" name="email" class="form-control" placeholder="Escribi tu mail..." required/>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+															<button type="submit" class="btn btn-primary">Enviar al email</button>
+														</div>
+														<div class='containerloader'>
+															<img src="http://localhost/atencionusuarios/wp-content/uploads/2020/10/toptal-blog-image-1489080120310-07bfc2c0ba7cd0aee3b6ba77f101f493.gif" class="loader" alt="">
+														</div>
+														<div class="modal-footer" id='errordiv'>
+														</div>
+													</form>
+												</div>
+												
+											</div>
+										</div>
+									</div>

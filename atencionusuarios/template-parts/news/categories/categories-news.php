@@ -6,18 +6,9 @@
  */
 
 
-//Obtengo slug de la categoria
-$urlrelative = $_SERVER['REQUEST_URI'];
-//El 27 corresponde al lugar desde donde chequea url 
-$urlrelativecut = substr($urlrelative,27,100);
-$slug = str_replace("/","",$urlrelativecut);
+//Obtengo las variables enviadas.
+$id_category = ente_get_var( 'category', true );
 
-//Convierto el slug en id category. Si vale 0 
-if ( ! $id_category = get_category_by_slug( $slug ) ){
-    $id_category=0;
-}else{
-    $id_category=$id_category->term_id;
-}
 
 //No tiene sentido, solo si la pagina tiene contenido
 if ( have_posts() ) {
@@ -31,25 +22,26 @@ if ( have_posts() ) {
                                 <div class="">
                                     <div class="row row-gutter-sm justify-content-center mb-5" id='category-news'>
                                     <?php
-                                    ///IF HAVE POST THE POST FOR CATEGORY
-                                    //QUERY POST SOLO PARA PAGINAS CUSTOM
+
+                                        //Traigo primer pagina de noticias
                                         $query_post=new WP_Query(array(
-                                            'posts_per_page' => '6',
-                                            'post_type' => 'post',
-                                            'paged'  => '1',
-                                            'cat' => $id_category 
+                                            'posts_per_page'    => '6',
+                                            'post_type'         => 'post',
+                                            'paged'             => '1',
+                                            'cat'               => $id_category 
                                         ));
+
+                                        $numeropost = $query_post->found_posts;
+                                        //Cuento cuantas paginas escribio
                                         $count=0;
                                         while ( $query_post->have_posts() ) {
 
                                             //Obtengo la informacion de los posts
                                             $query_post->the_post();
-                                            $post_id=get_the_ID();
+                                            $post_id = get_the_ID();
                                             
-
                                             //Obtengo el url de la imagen destacada
                                             $featured_img_url = get_the_post_thumbnail_url($post_id,'full'); 
-
 		                            ?>
                                     
                                         <div class="col-lg-6 isotope-item text-left">
@@ -100,13 +92,12 @@ if ( have_posts() ) {
                         </div>
 
 <?php
-//Iria 6 si es 6 por pagina
-if($count==6){ 
+//Si son menos de 6 no muestro el boton para traer mas noticias
+if( $numeropost == 6){ 
 ?>
-                        <form  method="POST" id="loadnews" action="loadnews">
-                        <p class="status"></p>
+                        <form  method="POST" id="loadnews" action="loadnews" style='text-align:center;'>
                             <input type="hidden" value="<?php echo $id_category; ?>" name="category" id="category">
-                            <button type="submit">Mas</button>
+                            <button type="submit" class="mb-1 mt-1 mr-1 btn btn-light" style='margin: auto; width:200px;'><i class="fas fa-sync" style='margin-right:10px;'></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">   Mas noticias</font></font></button>
                         </form>
 <?php
 }

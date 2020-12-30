@@ -16,9 +16,12 @@
 
 			) ); ?>
 
+<?php 
+	ente_get_template_part( 'template-parts/news/categories/categories-news', 
+            array(
+				'category'       => '0',
+			) ); ?>
 
-    <?php //get_template_part( 'template-parts/news/main-news' ); ?>
-	<?php get_template_part( 'template-parts/news/categories/categories-news' ); ?>
 	
 	<?php get_template_part( 'template-parts/common/action-denuncia' ); ?>
 	

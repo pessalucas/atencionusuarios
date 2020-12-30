@@ -235,3 +235,170 @@ if ( ! function_exists( 'get_idcomuna_by' ) ) {
 				return 32;
 		}
  } }
+
+
+ /**
+ * Recursively sort an array of taxonomy terms hierarchically. Child categories will be
+ * placed under a 'children' member of their parent term.
+ * @param Array   $cats     taxonomy term objects to sort
+ * @param Array   $into     result array to put them in
+ * @param integer $parentId the current parent ID to put them in
+ */
+function sort_terms_hierarchically( $cats, $into, $parentId = 0)
+{
+    foreach ($cats as $i => $cat) {
+        if ($cat->parent == $parentId) {
+            $into[$cat->term_id] = $cat;
+            unset($cats[$i]);
+        }
+    }
+
+    foreach ($into as $topCat) {
+        $topCat->children = array();
+        sort_terms_hierarchically($cats, $topCat->children, $topCat->term_id);
+    }
+}
+
+
+
+
+
+
+
+/*
+**
+* Sistema de Mails At Usuario
+*
+*/
+
+//Recupero de contrasena
+function mail_recu_pass ( $name, $email, $newpassword, $link ) {
+
+	$destinatario = $email;
+	$asunto = 'Nueva contraseña - Denuncias Ente';
+	if ( $name ){ 
+		$cuerpo= '
+		<h3>Hola '. $name . '</h3>
+		<p>Tu nueva contraseña asignada aleatoriamente es: ' . $newpassword. '</p>
+		<p>Puedes modificarla en la sección "Editar Perfil" una vez que hayas iniciado sesión.</p>
+		<a href="http://192.168.3.117/">Sitio - Denuncias Ente</a>
+		<p>Cualquier duda no dudes en comuncarte con nosotros. <br>
+		Telefono: 0800-222-ENTE (3686) <br>
+		Mail: denuncias@entedelaciudad.gob.ar <br>
+		Queremos darte la ciudad que te mereces. <br>
+		</p>
+		';
+	}else{
+		$cuerpo= '
+		<h3>Hola '. $email . '</h3>
+		<p>Tu nueva contraseña asignada aleatoriamente es ' . $newpassword. '</p>
+		<p>Puedes modificarla en la sección "Editar Perfil" una vez que hayas iniciado sesión.</p>
+		<a href="http://192.168.3.117/">Sitio - Denuncias Ente</a>
+		<p>Cualquier duda no dudes en comuncarte con nosotros. <br>
+		Telefono: 0800-222-ENTE (3686) <br>
+		Mail: denuncias@entedelaciudad.gob.ar <br>
+		Queremos darte la ciudad que te mereces. <br>
+		</p>
+		';
+	}
+	$cabeceras= array('Content-Type: text/html; charset=UTF-8');
+	
+	wp_mail( $destinatario, $asunto , $cuerpo, $cabeceras);
+	}
+	
+	
+	//Nuevo usuario creado via nueva denuncia
+	function mail_new_user_fast ( $name, $email, $newpassword, $link ) {
+	
+		$destinatario = $email;
+		$asunto = 'Nueva usuario - Denuncias Ente';
+		$cuerpo= '
+		<h3>Hola '. $email . '</h3>
+		<p>Bienvenido a la nueva red de sitios del Ente Único Regulador De Servicios Públicos De La Ciudad Autónoma De Buenos Aires.</p>
+		<p>En Denuncias Ente vas a poder relizar denuncias sobre los 13 servicios controlados por el organismo y hacer seguimiento de las mismas en tiempo real.</p>
+		<p>Tu nueva contraseña asignada aleatoriamente es ' . $newpassword. '</p>
+		<p>Puedes modificarla y terminar de completar tus datos personales en la sección "Editar Perfil" una vez que hayas iniciado sesión.</p>
+		<a href="http://192.168.3.117/">Sitio - Denuncias Ente</a>
+		<p>Cualquier duda no dudes en comuncarte con nosotros. <br>
+		Telefono: 0800-222-ENTE (3686) <br>
+		Mail: denuncias@entedelaciudad.gob.ar <br>
+		Queremos darte la ciudad que te mereces. <br>
+		</p>
+		';
+		$cabeceras= array('Content-Type: text/html; charset=UTF-8');
+		
+	wp_mail( $destinatario, $asunto , $cuerpo, $cabeceras);
+	}
+	
+	//Nuevo usuario creado por via de registro
+	function mail_new_user_slow ( $name, $email, $newpassword, $link ) {
+	
+		$destinatario = $email;
+		$asunto = 'Nueva usuario - Denuncias Ente';
+		$cuerpo= '
+		<h3>Hola '. $name . '</h3>
+		<p>Bienvenido a la nueva red de sitios del Ente Único Regulador De Servicios Públicos De La Ciudad Autónoma De Buenos Aires.</p>
+		<p>En Denuncias Ente vas a poder relizar denuncias sobre los 13 servicios controlados por el organismo y hacer seguimiento de las mismas en tiempo real.</p>
+		<a href="http://192.168.3.117/">Sitio - Denuncias Ente</a>
+		<p>Cualquier duda no dudes en comuncarte con nosotros. <br>
+		Telefono: 0800-222-ENTE (3686) <br>
+		Mail: denuncias@entedelaciudad.gob.ar <br>
+		Queremos darte la ciudad que te mereces. <br>
+		</p>
+		';
+		$cabeceras= array('Content-Type: text/html; charset=UTF-8');
+		
+	wp_mail( $destinatario, $asunto , $cuerpo, $cabeceras);
+	}
+	
+	//Nueva denuncia
+	function mail_new_denuncia ( $name, $email, $newpassword, $link ) {
+
+		$destinatario = $email;
+		$asunto = 'Nueva denuncia - Denuncias Ente';
+		if ( $name ){ 
+		$cuerpo= '
+		<h3>Hola '. $name . '</h3>
+		<p>La denuncia se ha iniciado correctamente. Puedes hacer seguimiento de la misma ingresando a <a href="http://192.168.3.117/">Sitio - Denuncias Ente</a> con tu usuario o
+		atraves del siguiente link <a href="'.$link.'">'.$link.'</a>.
+		</p>
+		';
+	}else{
+		$cuerpo= '
+		<h3>Hola '. $email . '</h3>
+		<p>La denuncia se ha iniciado correctamente. Puedes hacer seguimiento de la misma ingresando a <a href="http://192.168.3.117/">Sitio - Denuncias Ente</a> con tu usuario o
+		atraves del siguiente link <a href="'.$link.'">'.$link.'</a>.
+		</p>
+		<p>Cualquier duda no dudes en comuncarte con nosotros. <br>
+		Telefono: 0800-222-ENTE (3686) <br>
+		Mail: denuncias@entedelaciudad.gob.ar <br>
+		Queremos darte la ciudad que te mereces. <br>
+		</p>
+		';
+	}
+
+		$cabeceras= array('Content-Type: text/html; charset=UTF-8');
+
+		
+	wp_mail( $destinatario, $asunto , $cuerpo, $cabeceras);
+	}
+	
+
+	//Nuevo comentario realizado por At Usuarios
+function mail_new_comment_vecino ( $name, $email, $newpassword, $nrodenuncia ) {
+
+	$destinatario = 'soporte@entedelaciudad.gov.ar';
+	$asunto = 'Notificacion en denuncia';
+	$cuerpo= '
+	<h3>El usuario '. $name . ' ha realizado un comentario en la denuncia '. $nrodenuncia . '</h3>
+	<p>Por favor verifique la informacion para responder el comentario en breve.</p>
+	<p>Cualquier duda no dudes en comuncarte con nosotros. <br>
+	Telefono: 0800-222-ENTE (3686) <br>
+	Mail: denuncias@entedelaciudad.gob.ar <br>
+	Queremos darte la ciudad que te mereces. <br>
+	</p>
+	';
+	$cabeceras= array('Content-Type: text/html; charset=UTF-8');
+
+wp_mail( $destinatario, $asunto , $cuerpo, $cabeceras);
+}

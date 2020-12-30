@@ -1,14 +1,14 @@
 <?php
 //Obtengo las variables enviadas.
 
-$label = ente_get_var( 'label', true );
-$title = ente_get_var( 'title', true );
+$label       = ente_get_var( 'label', true );
+$title       = ente_get_var( 'title', true );
 $description = ente_get_var( 'description', true );
-$link  = ente_get_var( 'link', true );
+$link        = ente_get_var( 'link', true );
 
 ?>
 
-<div role="main" class="main">
+<div role="main" class="main mainhero">
 
                 <div class="slider-container rev_slider_wrapper" style="height: 600px;">
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1110, 'gridheight': [750,750,750,1250], 'responsiveLevels': [4096,1200,992,500]}">
@@ -52,7 +52,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingtop="['10','10','10','10']"
 									data-paddingbottom="['10','10','10','10']"
 									data-paddingleft="['18','18','18','18']"
-									data-paddingright="['18','18','18','18']">los servicios publicos</h1>
+									data-paddingright="['18','18','18','18']">los servicios públicos</h1>
 
 
 
@@ -62,11 +62,11 @@ $link  = ente_get_var( 'link', true );
 									data-y="center" data-voffset="['65','65','65','95']"
 									data-width="['690','690','690','800']"
 									data-fontsize="['18','18','18','35']"
-									data-lineheight="['29','29','29','40']">Tu reclamo hace la diferencia</div>
+									data-lineheight="['29','29','29','40']">Tu denuncia hace la diferencia</div>
 
 
 								<a class="tp-caption btn btn-outline btn-primary font-weight-bold"
-									href="#"
+									href="<?php echo home_url(); ?>/elente/"
 									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="left" data-hoffset="['0','30','30','30']"
 									data-y="center" data-voffset="['140','140','140','245']"
@@ -75,10 +75,10 @@ $link  = ente_get_var( 'link', true );
 									data-paddingleft="['40','40','40','50']"
 									data-paddingright="['40','40','40','50']"
 									data-fontsize="['13','13','13','25']"
-									data-lineheight="['20','20','20','25']">Saber mas</a>
+									data-lineheight="['20','20','20','25']">Saber más</a>
 
-								<a class="tp-caption btn btn-primary font-weight-bold"
-									href="#"
+								<a class="tp-caption btn btn-primary font-weight-bold herobutton"
+									href="<?php echo home_url(); ?>/denuncias/"
 									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="left" data-hoffset="['185','185','220','340']"
 									data-y="center" data-voffset="['140','140','140','245']"
@@ -116,7 +116,7 @@ $link  = ente_get_var( 'link', true );
 									data-paddingtop="['10','10','10','12']"
 									data-paddingbottom="['10','10','10','12']"
 									data-paddingleft="['18','18','18','18']"
-									data-paddingright="['18','18','18','18']">Contactanos</div>
+									data-paddingright="['18','18','18','18']">Contáctanos</div>
 
 								<div class="tp-caption tp-caption-overlay-opacity main-label"
 									data-frames='[{"delay":1300,"speed":1000,"sfxcolor":"#212529","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"sfxcolor":"#212529","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
@@ -134,10 +134,10 @@ $link  = ente_get_var( 'link', true );
 									data-y="center" data-voffset="['65','65','65','105']"
 									data-width="['600','600','600','600']"
 									data-fontsize="['18','18','18','30']"
-									data-lineheight="['29','29','29','40']">Tu reclamo hace la diferencia</div>
+									data-lineheight="['29','29','29','40']">Tu denuncia hace la diferencia</div>
 
-								<a class="tp-caption btn btn-primary font-weight-bold"
-									href="#"
+								<a class="tp-caption btn btn-primary font-weight-bold herobutton"
+									href="<?php echo home_url(); ?>/denuncias/"
 									data-frames='[{"delay":3000,"speed":2000,"frame":"0","from":"y:50%;opacity:0;","to":"y:0;o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="left" data-hoffset="['550','550','550','450']"
 									data-y="center" data-voffset="['140','140','140','235']"
@@ -162,7 +162,7 @@ $link  = ente_get_var( 'link', true );
                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/parada.jpg" class="card-img-top rounded-0 img-fluid" alt="IT Consulting">
                             <div class="card-body pt-4">
                                 <h4 class="custom-heading-bar font-weight-bold text-color-dark text-5">COMPROMISO</h4>
-                                <p class="custom-font-secondary text-4 mb-3">El organismo sigue en funcionamiento <strong class="text-color-dark">controlando los servicios escenciales</strong> a pesar de la pandemia.</p>
+                                <p class="custom-font-secondary text-4 mb-3">El organismo sigue operativo durante la pandemia <strong class="text-color-dark">controlando los servicios públicos escenciales</strong>.</p>
                             </div>
                         </div>
                         <div class="card-transform">
@@ -170,7 +170,7 @@ $link  = ente_get_var( 'link', true );
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/hero/flor.jpg" class="card-img-top rounded-0 img-fluid" alt="IT Support">
                                 <div class="card-body pt-4">
                                     <h4 class="custom-heading-bar custom-heading-bar-right font-weight-bold text-color-dark text-right text-5">20 AÑOS CON VOS, UNA <br> CIUDAD CON VOZ</h4>
-                                    <p class="text-right custom-font-secondary text-4 pl-4 ml-3 mb-3">Orgullosos de defender tus derechos. Conoce mas sobre el organismo.</p>
+                                    <p class="text-right custom-font-secondary text-4 pl-4 ml-3 mb-3">Orgullosos de defender tus derechos.</p>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@ $link  = ente_get_var( 'link', true );
                     <span class="d-block custom-text-color-grey-1 font-weight-bold mb-1 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700"><?php echo $label; ?></span>
                     <h2 class="text-color-dark font-weight-bold text-8 line-height-2 negative-ls-1 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900"><?php echo $title; ?></h2>
                     <p class="custom-text-size-1 pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1100"><?php echo $description; ?></p>
-                    <a href="<?php echo $link; ?>" class="d-flex align-items-center custom-link-effect-1 text-color-primary font-weight-bold text-decoration-none text-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1300">Conocer más<i class="custom-arrow-icon ml-2"></i></a>
+                    <a href="<?php echo $link; ?>" class="d-flex align-items-center custom-link-effect-1 text-color-primary font-weight-bold text-decoration-none text-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1300" target='_blank'>Conocer más<i class="custom-arrow-icon ml-2"></i></a>
                 </div>
             </div>
         </div>

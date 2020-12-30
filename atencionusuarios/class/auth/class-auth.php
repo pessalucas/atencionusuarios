@@ -15,13 +15,13 @@ if ( ! class_exists( 'Auth' ) ) {
 		 *
 		 * @var integer
 		 */
-		private $page_login_id = 5;
+		private $page_login_id = 30;
 		/**
-		 * ID de la pagina de perfil.
+		 * ID de la pagina de seguimiendo denuncias.
 		 *
 		 * @var integer
 		 */
-		private $page_profile_id = 12;
+		private $page_segdenuncias_id = 41;
 		/**
 		 * Static accessor.
 		 *
@@ -36,6 +36,8 @@ if ( ! class_exists( 'Auth' ) ) {
 			add_action( 'wp_ajax_nopriv_wp_auth_login', array( $this, 'ajax_login' ) );
 			// Generamos la respuesta del ajax para el registro.
 			add_action( 'wp_ajax_nopriv_wp_auth_register', array( $this, 'ajax_register' ) );
+			// Generamos la respuesta del recupero de password.
+			add_action( 'wp_ajax_nopriv_wp_reset_pass', array( $this, 'ajax_reset_pass' ) );
 			// Registramos los scripts o estilos necesarios.
 			add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ) );
 			// Antes de que se elija que php se va a utilizar con esa url, revisamos las redirecciones.
@@ -69,19 +71,14 @@ if ( ! class_exists( 'Auth' ) ) {
 			$user_address   = isset( $_POST['address'] ) ? sanitize_text_field( wp_unslash( $_POST['address'] ) ) : '';
 
 			if (
-				'' === $user_firstname
-				|| '' === $user_lastname
-				|| '' === $user_email
+				   '' === $user_email
 				|| '' === $user_pass
-				|| '' === $user_phone
-				|| '' === $user_dni
-				|| '' === $user_address
 			) {
-				wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+				wp_send_json_error( 'Error al procesar lo solicitado. Complete los campos obligatorios.' );
 				wp_die();
 			}
 
-			if ( username_exists( $user_dni ) ) {
+			if ( username_exists( $user_dni ) AND ( $user_dni != '' ) ) {
 				wp_send_json_error( 'Ya existe un usuario con ese DNI.' );
 				wp_die();
 			}
@@ -91,15 +88,16 @@ if ( ! class_exists( 'Auth' ) ) {
 				wp_die();
 			}
 
+
 			$user_id = wp_insert_user(
 				array(
 					'user_pass'            => $user_pass,
-					'user_login'           => $user_dni,
+					'user_login'           => $user_email,
 					'user_email'           => $user_email,
 					'first_name'           => $user_firstname,
 					'last_name'            => $user_lastname,
 					'show_admin_bar_front' => false,
-					'role'                 => '',
+					'role'                 => 'denunciante',
 				)
 			);
 
@@ -108,9 +106,16 @@ if ( ! class_exists( 'Auth' ) ) {
 				wp_die();
 			}
 
+			//Sumo code md5 para acceso not_login
+			$code_md5 = md5( $user_email );
+
 			update_user_meta( $user_id, 'dni', $user_dni );
 			update_user_meta( $user_id, 'telefono', $user_phone );
 			update_user_meta( $user_id, 'direccion', $user_address );
+			update_user_meta( $user_id, 'not_login_code', $code_md5 );
+
+			//Notifico via mail nuevo usuario
+			mail_new_user_slow ( $user_firstname ,$user_email ,'' ,'' );
 
 			wp_signon(
 				array(
@@ -145,6 +150,14 @@ if ( ! class_exists( 'Auth' ) ) {
 			$user_pass     = isset( $_POST['pass'] ) ? sanitize_text_field( wp_unslash( $_POST['pass'] ) ) : '';
 			$user_remember = isset( $_POST['remember'] ) ? sanitize_text_field( wp_unslash( $_POST['remember'] ) ) : 'false';
 
+			if (
+				'' === $user_email
+			 || '' === $user_pass
+		 	) {
+				wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+				wp_die();
+		 	}
+			
 			$credentials = array(
 				'user_login'    => $user_email,
 				'user_password' => $user_pass,
@@ -184,10 +197,54 @@ if ( ! class_exists( 'Auth' ) ) {
 				'WP_Auth',
 				array(
 					'ajax'     => admin_url( 'admin-ajax.php' ),
-					'redirect' => get_permalink( $this->page_profile_id ),
+					'redirect' => get_permalink( $this->page_segdenuncias_id ),
 					'nonce'    => wp_create_nonce( 'auth_nonce' ),
 				)
 			);
+		}
+		/**
+		 * Generamos la respuesta para el ajax de login.
+		 */
+		public function ajax_reset_pass() {
+
+				// Verificamos a traves de la funcionalidad de captcha de WordPress: Los nonces.
+				if ( ! isset( $_POST['nonce'] ) ) {
+					wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+					wp_die();
+				}
+				if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'auth_nonce' ) ) {
+					wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+					wp_die();
+				}
+				// Si el usuario ya se encuentra logueado, devolvemos ok.
+				if ( is_user_logged_in() ) {
+					wp_send_json_error(  'Usuario logueado.' );
+					wp_die();
+				}
+	
+				$user_email    = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+			
+				if (
+					'' === $user_email
+				 ) {
+					wp_send_json_error( 'Error al procesar lo solicitado. Indique un email por favor.' );
+					wp_die();
+				 }
+
+				 if ( $user_id = get_user_by( 'email', $user_email ) ){
+
+					$user_password   = wp_generate_password( 6 , false , false );
+					wp_set_password ( $user_password, $user_id->data->ID  );
+					mail_recu_pass( '' , $user_email , $user_password , '');
+					
+					wp_send_json_success( 'Se le ha enviado al mail indicado una nueva contraseña.' );
+					wp_die();
+
+				 }else{
+					wp_send_json_error( 'El mail indicado no posee usuario asociado.' );
+					wp_die();
+				 }
+				 wp_die();
 		}
 		/**
 		 * Revisamos los redirect en funcion de si el usuario esta lougeado o no.
@@ -195,9 +252,10 @@ if ( ! class_exists( 'Auth' ) ) {
 		public function redirect_is_loggedin() {
 			// Si el usuario esta logueado y es la pagina de ingresar, lo redirigimos a la pagina de perfil.
 			if ( is_user_logged_in() && is_page( $this->page_login_id ) ) {
-				wp_safe_redirect( get_permalink( $this->page_profile_id ), 301 );
+				wp_redirect( get_permalink( $this->page_segdenuncias_id ));
 				exit;
 			}
+
 		}
 		/**
 		 * Static accessor.

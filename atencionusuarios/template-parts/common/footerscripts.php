@@ -34,6 +34,8 @@
 		
 <!-- Theme Initialization Files -->
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/theme.init.js"></script>
+
+<script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(139273)</script>
         
 <?php wp_footer(); ?>
 

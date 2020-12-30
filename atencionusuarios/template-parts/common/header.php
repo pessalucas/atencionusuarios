@@ -4,6 +4,7 @@
 *	Header con parametro de sub directorio asignable
 
 */
+//HOME URL RECIBE EL PATH
 $subdirectory='/atencionusuarios/';
 ?>
 <header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 90}">
@@ -30,11 +31,11 @@ $subdirectory='/atencionusuarios/';
 															¿Que es el Ente?
 														</a>
                                                     </li>
-                                                    <li>
+                                               <!-- <li>
 														<a class="nav-link" href="<?php echo $subdirectory; ?>news/" id='news'>
 															Noticias
 														</a>
-													</li>
+													</li> -->
 													<li class="dropdown">
 														<a class="dropdown-item dropdown-toggle" href="<?php echo $subdirectory; ?>denuncias/" id='denuncias'>
 															Denuncias
@@ -46,7 +47,7 @@ $subdirectory='/atencionusuarios/';
 																</a>
 															</li>
 															<li>
-																<a class="nav-link" href="<?php echo $subdirectory; ?>segdenuncia/" id='segdenuncia'>
+																<a class="nav-link" href="<?php if (  is_user_logged_in() ) { echo $subdirectory . 'segdenuncia/'; }else{  echo $subdirectory . 'login/'; }?>" id='segdenuncia'>
 																	Seguimiento de denuncia
 																</a>
 															</li>
@@ -57,6 +58,26 @@ $subdirectory='/atencionusuarios/';
 															Contacto
 														</a>
 													</li>
+													<?php if (  is_user_logged_in() ) { ?> 
+														<li>
+															<a class="nav-link" href="<?php echo $subdirectory; ?>profile/" id='profile'>
+																Editar perfil
+															</a>
+														</li>
+													<?php }?>
+													<?php if (  is_user_logged_in() ) { ?> 
+														<li>
+															<a class="nav-link" href="<?php echo wp_logout_url( home_url() ); ?>" id='logout'>
+																Salir
+															</a>
+														</li>
+													<?php }else{ ?>
+														<li>
+															<a class="nav-link" href="<?php echo $subdirectory; ?>login/" id='login'>
+																Inicia sesión
+															</a>
+														</li>
+													<?php } ?>
 												</ul>
 											</nav>
 										</div>
@@ -67,17 +88,17 @@ $subdirectory='/atencionusuarios/';
 									<div class="d-none d-sm-inline-flex order-1 order-lg-2 ml-2">
 										<ul class="header-extra-info d-flex">
 											<li>
-											<a href="https://www.facebook.com/entedelaciudad/">
-												<i class="fab fa-facebook"></i>
+											<a href="https://www.facebook.com/entedelaciudad/" target='_blank'>
+												<i class="fab fa-facebook-square"></i>
 											</a>
 											</li>
 											<li>
-											<a href="https://twitter.com/EntedelaCiudad">
+											<a href="https://twitter.com/EntedelaCiudad" target='_blank'>
 												<i class="fab fa-twitter-square"></i>
 											</a>
 											</li>
 											<li>
-											<a href="https://www.instagram.com/entedelaciudadok/">
+											<a href="https://www.instagram.com/entedelaciudadok/" target='_blank'>
 												<i class="fab fa-instagram-square"></i>
 											</a>
 											</li>

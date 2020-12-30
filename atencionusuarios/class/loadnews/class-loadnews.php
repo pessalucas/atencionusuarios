@@ -1,6 +1,6 @@
 <?php
 /**
- * Carga mas noticias en "noticias"
+ * Carga mas noticias en "Noticias" y "Categorias"
  *
  * @package LucasPessa
  */
@@ -20,79 +20,100 @@ if ( ! class_exists( 'Users_loadnews' ) ) {
 		 * Constructor.
 		 */
 		public function __construct() {
-
+			// Generamos la respuesta del ajax para el pedido de mas noticias.
 			add_action( 'wp_ajax_nopriv_ajaxloadnews',array($this, 'ajax_loadnews'));
 			add_action( 'wp_ajax_ajaxloadnews',array($this, 'ajax_loadnews'));
-
+			//Inicalizamos el ajax
 			add_action('init', array($this,'ajax_loadnews_init'));
-			
 		}
 		public function ajax_loadnews_init(){
 
-			wp_register_script('ajax-loadnews-script', get_template_directory_uri() . '/resources/scripts/ajax-loadnews-script.js', array('jquery') ); 
+			wp_register_script( 
+				'ajax-loadnews-script', 
+				get_template_directory_uri() . '/resources/scripts/news/Loadnews.js', 
+				array('jquery') ); 
+
 			wp_enqueue_script('ajax-loadnews-script');
 		
-			wp_localize_script( 'ajax-loadnews-script', 'ajax_loadnews_object', array( 
-				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				//'redirecturl' => home_url(),
-				'loadingmessage' => __('Chequeando informacion, espere...')
+			wp_localize_script( 
+				'ajax-loadnews-script', 
+				'ajax_loadnews_object', 
+				array( 
+				'ajaxurl' 	     =>   admin_url( 'admin-ajax.php' ),
+				'nonce'          =>   wp_create_nonce( 'news_nonce' )
 			));
-		
-
+	
 		}
 		//loadnews por ajax
 		public function ajax_loadnews(){
 		
+			// Verificamos a traves de la funcionalidad de captcha de WordPress: Los nonces.
+			if ( ! isset( $_POST['nonce'] ) ) {
+				wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+				wp_die();
+			}
+			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'news_nonce' ) ) {
+				wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+				wp_die();
+			}
+			
 			//Envio categoria post por pagina y numero de pagina
-			$category= sanitize_text_field(  $_POST['category'] );
-			$postperpage= sanitize_text_field(  $_POST['postperpage'] );
-			$page = sanitize_text_field(  $_POST['page'] );
-			if ($category){
-				$query_post=new WP_Query(array(
+			$category	 =   ( ( is_numeric ( $_POST['category'] ) ) OR ( $_POST['category'] == 0 ) ) ? sanitize_text_field(  $_POST['category'] )  : 'NoNum';
+			$postperpage =   is_numeric ( $_POST['postperpage'] ) ? sanitize_text_field(  $_POST['postperpage'] )  : '';
+			$page 		 =   is_numeric ( $_POST['page'] ) ? sanitize_text_field(  $_POST['page'] )  : '';
+
+			if (
+				'NoNum' === $category
+			 || '' 	    === $postperpage
+			 || ''      === $page
+		 ) {
+			 wp_send_json_error( 'Error al procesar lo solicitado. Intente nuevamente o contacte con soporte.' );
+			 wp_die();
+		 }
+		
+		 	//Segun si estoy en categoria o main filtro query
+			if ( $category ){
+				$query_post = new WP_Query(
+					array(
 					'posts_per_page' => $postperpage,
-					'post_type' => 'post',
-					'paged'  => $page ,
-					'cat' => $id_category 
+					'post_type' 	 => 'post',
+					'paged'  	     => $page ,
+					'cat' 		     => $category 
 				));
 			}else{
-				$query_post=new WP_Query(array(
+				$query_post = new WP_Query(
+					array(
 					'posts_per_page' => $postperpage,
-					'post_type' => 'post',
-					'paged'  => $page ,
+					'post_type' 	 => 'post',
+					'paged'  		 => $page ,
 				));
 			}
-
-
-			$news_list=array();
+			//Genero array para envio de datos con las pedidas
+			$news_list    = array();
+			$current_news = array();
 			while ( $query_post->have_posts() ) {
-				
-				$current_news=array();
-				//Obtengo la informacion de los posts
+				//Obtengo la informacion de los posts y lo guardo en un array
 				$query_post->the_post();
-				$post_id=get_the_ID();
-				//print_r( $query_post );
 				
-				//Obtengo el url de la imagen destacada
-				$featured_img_url = get_the_post_thumbnail_url($post_id,'full'); 
-
-	
-				$current_news['title'] =  get_the_title();
-				$current_news['excerpt'] =  get_the_excerpt();
+				$post_id 				   =  get_the_ID();
+				$featured_img_url   	   =  get_the_post_thumbnail_url($post_id,'full');  //Obtengo el url de la imagen destacada
+				$current_news['title']     =  get_the_title();
+				$current_news['excerpt']   =  get_the_excerpt();
 				$current_news['permalink'] =  get_the_permalink();
-				$current_news['date'] =  get_the_date();
-				$current_news['author'] =  get_the_author();
-				$current_news['img'] = $featured_img_url;
+				$current_news['date']      =  get_the_date();
+				$current_news['author']    =  get_the_author();
+				$current_news['img']       = $featured_img_url;
+				array_push( $news_list , $current_news );	//Cargo al array otra rama
 				
-				array_push($news_list,$current_news);
 			 }
 
-			echo json_encode(array(
-				'status'=>'success', 
-				'news'=> $news_list ,
-				'message' => 'Enviado.'
+			wp_send_json_success(
+				array(
+				'status'  =>  'success', 
+				'news'    =>  $news_list ,
+				'message' =>  'Enviado.'
 			));
-			die();
-
+			wp_die();
 		}
 		
 		/**

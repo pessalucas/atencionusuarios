@@ -1,8 +1,11 @@
 (function( $, window ){
 	'use strict';
-
-	const $formRegister  = $( '#frmSignUp' );
-	const $formErrors = $( '#registerError' );
+	
+	//Obtengo url nativa para definir las redirecciones
+	var urlnative = location.href;
+    const url_nueva_denuncia = urlnative + 'denuncias/';
+	const $formRegister      = $( '#frmSignUp' );
+	const $formErrors        = $( '#registerError' );
 
 	function onSubmitRegister( event ) {
 		event.preventDefault();
@@ -33,7 +36,15 @@
 				action: 'wp_auth_register',
 			}
 		).done( function( json ) {
+
 			console.log( json );
+			
+			console.log(document.referrer );
+			if( document.referrer == url_nueva_denuncia ){
+				window.close();
+				return;
+			}
+			
 			if ( json.success ) {
 				window.location.href = WP_Auth.redirect;
 				return;

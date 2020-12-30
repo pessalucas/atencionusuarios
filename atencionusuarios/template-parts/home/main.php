@@ -15,26 +15,26 @@
                             <div class="col-md-6 col-lg-3 text-center mb-5 mb-lg-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="650">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bots/hig_urb.png" class="img-fluid iconsmain" width="100" alt="" />
                                 <h4 class="text-color-primary font-weight-bold text-6 mb-3">Higiene Urbana</h4>
-                                <p class="custom-text-size-1 px-lg-4">Pasando por la recolección, hasta el barrido.</p>
-                                <a href="<?php echo get_stylesheet_directory_uri(); ?>/elente/" class="text-color-dark font-weight-bold custom-text-size-1">Leer mas +</a>
+                                <p class="custom-text-size-1 px-lg-4">La Ciudad de Buenos Aires se encuentra dividida en 7 zonas de recolección y limpieza, cada una de ellas depende de una empresa de higiene urbana.</p>
+                                <a href="<?php echo  home_url(); ?>/elente/" class="text-color-dark font-weight-bold custom-text-size-1">Ver todos +</a>
                             </div>
                             <div class="col-md-6 col-lg-3 text-center mt-lg-5 mb-5 mb-lg-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="850">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bots/alum_pub.png" class="img-fluid iconsmain" width="100" alt=""/>
-                                <h4 class="text-color-dark font-weight-bold text-6 mb-3">Alumbrado publico</h4>
-                                <p class="custom-text-size-1 px-lg-4">Controlamos el servicio de alumbrado publico de la ciudad.</p>
-                                <a href="<?php echo get_stylesheet_directory_uri(); ?>/elente/" class="text-color-primary font-weight-bold custom-text-size-1">Leer mas +</a>
+                                <h4 class="text-color-dark font-weight-bold text-6 mb-3">Alumbrado público</h4>
+                                <p class="custom-text-size-1 px-lg-4">Es el servicio de mantenimiento y reparación del alumbrado público en la Ciudad, que comprende las luminarias en columnas o suspendidas y/o buzones de alimentación, en la vía pública, plazas, espacios verdes públicos, en todo el ámbito de la Ciudad de Buenos Aires.</p>
+                                <a href="<?php echo  home_url(); ?>/elente/" class="text-color-primary font-weight-bold custom-text-size-1">Ver todos +</a>
                             </div>
                             <div class="col-md-6 col-lg-3 text-center mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1050">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bots/subtes.png" class="img-fluid iconsmain" width="100" alt=""/>
                                 <h4 class="text-color-primary font-weight-bold text-6 mb-3">Subterráneos</h4>
-                                <p class="custom-text-size-1 px-lg-4">Servicio escenicial para transporte en las areas de alta densidad poblacional.</p>
-                                <a href="<?php echo get_stylesheet_directory_uri(); ?>/elente/" class="text-color-dark font-weight-bold custom-text-size-1">Leer mas  +</a>
+                                <p class="custom-text-size-1 px-lg-4">La red de subterráneos consta de seis líneas de subterráneos y el premetro, tiene como objetivo promover movilidad en condiciones de seguridad, confort y calidad urbana, descongestionar el tránsito vehicular y mejorar la integración de la Ciudad.</p>
+                                <a href="<?php echo  home_url(); ?>/elente/" class="text-color-dark font-weight-bold custom-text-size-1">Ver todos +</a>
                             </div>
                             <div class="col-md-6 col-lg-3 text-center mt-lg-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1250">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/bots/semaforos.png" class="img-fluid iconsmain" width="100" alt=""/>
-                                <h4 class="text-color-dark font-weight-bold text-6 mb-3">Semaforos</h4>
-                                <p class="custom-text-size-1 px-lg-4">Importantisimos para garantizar la seguridad durante la circulacion de los vecinos.</p>
-                                <a href="<?php echo get_stylesheet_directory_uri(); ?>/elente/" class="text-color-primary font-weight-bold custom-text-size-1">Leer mas +</a>
+                                <h4 class="text-color-dark font-weight-bold text-6 mb-3">Semáforos</h4>
+                                <p class="custom-text-size-1 px-lg-4">El sistema de señalamiento luminoso posibilita la administración del flujo vehicular en el tramado urbano tanto en calles como en avenidas. Su correcto mantenimiento es de vital importancia para la seguridad vial, tanto para ocupantes de vehículos como para peatones.</p>
+                                <a href="<?php echo home_url(); ?>/elente/" class="text-color-primary font-weight-bold custom-text-size-1">Ver todos +</a>
                             </div>
                         </div>
                     </div>
@@ -44,8 +44,8 @@
                     <div class="container container-lg mt-4">
                         <div class="row">
                             <div class="col text-center">
-                                <h2 class="text-color-dark font-weight-bold text-8 line-height-2 mb-2">Controlamos la calidad de los servicios publicos.</h2>
-                                <p class="custom-font-secondary text-4 pb-2 mb-4">Brindarles a los vecinos la ciudad que se merecen es nuestra funcion</p>
+                                <h2 class="text-color-dark font-weight-bold text-8 line-height-2 mb-2">Controlamos la calidad de los servicios públicos.</h2>
+                                <p class="custom-font-secondary text-4 pb-2 mb-4">Queremos brindarles a los vecinos la ciudad que se merecen.</p>
                             </div>
                         </div>
                         <div class="row justify-content-center">
@@ -60,26 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-between align-items-center text-center position-relative z-index-1 py-4">
-                                    <div class="col-sm-4 col-lg-auto mb-4 mb-lg-0">
-                                        <img src="img/logos/logo-8.png" class="img-fluid" alt="" style="max-width: 80px;" />
-                                    </div>
-                                    <div class="col-sm-4 col-lg-auto mb-4 mb-lg-0">
-                                        <img src="img/logos/logo-9.png" class="img-fluid" alt="" style="max-width: 130px;" />
-                                    </div>
-                                    <div class="col-sm-4 col-lg-auto mb-4 mb-lg-0">
-                                        <img src="img/logos/logo-10.png" class="img-fluid" alt="" style="max-width: 110px;" />
-                                    </div>
-                                    <div class="col-sm-4 col-lg-auto mb-4 mb-md-0">
-                                        <img src="img/logos/logo-11.png" class="img-fluid" alt="" style="max-width: 110px;" />
-                                    </div>
-                                    <div class="col-sm-4 col-lg-auto mb-4 mb-md-0">
-                                        <img src="img/logos/logo-12.png" class="img-fluid" alt="" style="max-width: 100px;" />
-                                    </div>
-                                    <div class="col-sm-4 col-lg-auto">
-                                        <img src="img/logos/logo-13.png" class="img-fluid" alt="" style="max-width: 110px;" />
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -93,8 +74,8 @@
                                         <strong class="process-step-circle-content text-color-primary text-8">1</strong>
                                     </div>
                                     <div class="process-step-content px-5">
-                                        <h4 class="text-color-dark font-weight-bold text-4 line-height-1 mb-3">1. INICIO DE RECLAMO</h4>
-                                        <p class="custom-font-secondary custom-text-size-1 px-3 mb-0">A traves de esta App-Web realizas tu reclamo en la sección de <strong class="text-color-dark">Nueva denuncia</strong>.</p>
+                                        <h4 class="text-color-dark font-weight-bold text-4 line-height-1 mb-3">1.  Inicio de la Denuncia</h4>
+                                        <p class="custom-font-secondary custom-text-size-1 px-3 mb-0">A través de esta web podés realizar tu Denuncia ingresando en la sección <strong class="text-color-dark">Nueva denuncia</strong>.</p>
                                     </div>
                                 </div>
                                 <div class="process-step col-12 col-lg-4 mb-5 mb-lg-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400">
@@ -102,8 +83,8 @@
                                         <strong class="process-step-circle-content text-color-primary text-8">2</strong>
                                     </div>
                                     <div class="process-step-content px-5">
-                                        <h4 class="text-color-dark font-weight-bold text-4 line-height-1 mb-3">2. FISCALIZACIÓN</h4>
-                                        <p class="custom-font-secondary custom-text-size-1 px-3 mb-0">Un agente de control verifica la infracción, solicita su corrección y procede al <strong class="text-color-dark">multado</strong> de la prestadora del servicio.</p>
+                                        <h4 class="text-color-dark font-weight-bold text-4 line-height-1 mb-3">2. Fiscalización </h4>
+                                        <p class="custom-font-secondary custom-text-size-1 px-3 mb-0">Un agente fiscalizador verificara la infracción denunciada dando inicio al <strong class="text-color-dark">procedimiento administrativo</strong> correspondiente.</p>
                                     </div>
                                 </div>
                                 <div class="process-step col-12 col-lg-4 mb-5 mb-lg-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
@@ -111,8 +92,8 @@
                                         <strong class="process-step-circle-content text-color-primary text-8">3</strong>
                                     </div>
                                     <div class="process-step-content px-5">
-                                        <h4 class="text-color-dark font-weight-bold text-4 line-height-1 mb-3">3. SEGUIMIENTO</h4>
-                                        <p class="custom-font-secondary custom-text-size-1 px-3 mb-0">En la sección de <strong class="text-color-dark">Seguimiento de denuncia</strong> seguis el procedimiento.</p>
+                                        <h4 class="text-color-dark font-weight-bold text-4 line-height-1 mb-3">3. Seguimiento </h4>
+                                        <p class="custom-font-secondary custom-text-size-1 px-3 mb-0">En la sección de <strong class="text-color-dark">Seguimiento de denuncia</strong> podés conocer las novedades de tu denuncia.</p>
                                     </div>
                                 </div>
                             </div>

@@ -9982,7 +9982,7 @@ html.ie11 .scroll-to-top {
 /* Responsive */
 @media (max-width: 991px) {
 	html .scroll-to-top.hidden-mobile {
-		display: none !important;
+		/*display: none !important;*/
 	}
 }
 /* Scrollable */
@@ -13463,17 +13463,20 @@ section.timeline .timeline-box .owl-carousel {
 .toggle > .toggle-title {
 	transition: all .15s ease-out;
 	background: #f7f7f7;
-	border-left: 3px solid #CCC;
+	/*border-left: 3px solid #CCC;*/
 	border-radius: 5px;
 	color: #CCC;
 	display: block;
 	min-height: 20px;
-	padding: 12px 20px 12px 10px;
+	padding: 0px 20px 0px 0px;
 	position: relative;
 	cursor: pointer;
 	font-weight: 400;
 }
 
+.active a img{
+	/*filter: none!important;*/
+}
 .toggle > label:-moz-selection,
 .toggle > .toggle-title:-moz-selection {
 	background: none;

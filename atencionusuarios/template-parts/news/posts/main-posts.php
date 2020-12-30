@@ -12,6 +12,7 @@ if ( have_posts() ) {
      $post_id=get_the_ID();
      //Obtengo el url de la imagen destacada
      $featured_img_url = get_the_post_thumbnail_url($post_id,'full'); 
+
 ?>
 
 
@@ -81,5 +82,6 @@ if ( have_posts() ) {
 
 
 <?php
+
 }
 ?>

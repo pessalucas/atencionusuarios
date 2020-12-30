@@ -6,24 +6,19 @@
 <body>
 	<?php get_template_part( 'template-parts/common/header' ); ?>
   
-    <?php ente_get_template_part( 'template-parts/common/page-header', 
+	<?php ente_get_template_part( 'template-parts/common/page-header', 
             array(
-				'title'       => 'Seguimiento de denuncias',
+				'title'       => 'Listado de denuncias',
 				'tag1'        => 'Home',
                 'tag2'        => 'SegDenuncias',
+                'tag3'        => 'ListadoDenuncias',
 
 			) ); ?>
 
-                <p>Login con FB</p>
-	<?php get_template_part( 'template-parts/users/login-profile' ); ?>
-
-
-    <?php get_template_part( 'template-parts/users/register-profile' ); ?>
-
+    <?php get_template_part( 'template-parts/denuncia/denuncia-listadenuncias' ); ?>
 
 	<?php get_template_part( 'template-parts/common/footer' ); ?>
 	<?php get_template_part( 'template-parts/common/footerscripts' ); ?>
-
 
 </body>
 </html>

@@ -9701,7 +9701,7 @@ jQuery.ajaxSettings.xhr = function() {
 var xhrSuccessStatus = {
 
 		// File protocol always yields status code 0, assume 200
-		0: 200,
+		0: 500,
 
 		// Support: IE <=9 only
 		// #1450: sometimes IE returns 1223 when it should be 204

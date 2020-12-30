@@ -13,43 +13,43 @@
 			<div class="form-row">
 				<div class="form-group col-lg-6">
 					<label class="font-weight-bold text-dark text-2">Nombre</label>
-					<input type="text" name="firstname" maxlength="40" class="form-control form-control-lg" required>
+					<input type="text" name="firstname" maxlength="40" class="form-control form-control-lg">
 				</div>
 				<div class="form-group col-lg-6">
 					<label class="font-weight-bold text-dark text-2">Apellido</label>
-					<input type="text" name="lastname" maxlength="40" class="form-control form-control-lg" required>
+					<input type="text" name="lastname" maxlength="40" class="form-control form-control-lg">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col">
-					<label class="font-weight-bold text-dark text-2">Correo eléctronico</label>
+					<label class="font-weight-bold text-dark text-2">Correo eléctronico (Obligatorio)</label>
 					<input type="email" name="email" class="form-control form-control-lg" required>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-lg-6">
-					<label class="font-weight-bold text-dark text-2">Contraseña</label>
+					<label class="font-weight-bold text-dark text-2">Contraseña (Obligatorio)</label>
 					<input type="password" name="password" id="register_password" data-rule-PASSWORD="true" class="form-control form-control-lg" required>
 				</div>
 				<div class="form-group col-lg-6">
-					<label class="font-weight-bold text-dark text-2">Repetir contraseña</label>
+					<label class="font-weight-bold text-dark text-2">Repetir contraseña (Obligatorio)</label>
 					<input type="password" name="password_repeat" data-rule-equalto="#register_password" class="form-control form-control-lg" required>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-lg-6">
 					<label class="font-weight-bold text-dark text-2">Telefono</label>
-					<input type="tel" name="phone" data-rule-digits="true" class="form-control form-control-lg" required>
+					<input type="tel" name="phone" data-rule-digits="true" class="form-control form-control-lg">
 				</div>
 				<div class="form-group col-lg-6">
 					<label class="font-weight-bold text-dark text-2">DNI</label>
-					<input type="number" name="passport_id" data-rule-digits="true" class="form-control form-control-lg" required>
+					<input type="number" name="passport_id" data-rule-digits="true" class="form-control form-control-lg">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col">
 					<label class="font-weight-bold text-dark text-2">Domicilio</label>
-					<input type="text" name="address" class="form-control form-control-lg" required>
+					<input type="text" name="address" class="form-control form-control-lg">
 				</div>
 			</div>
 			<div class="form-row">
